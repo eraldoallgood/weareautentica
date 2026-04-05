@@ -191,6 +191,17 @@
         scroll-snap-align: start;
       }
 
+      /* Testimonial → verticale su mobile, foto centrata grande */
+      .testimonial-layout {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center;
+      }
+      .testimonial-photo {
+        max-width: 160px !important;
+        margin: 0 auto !important;
+      }
+
       /* Location cards grid → 1 colonna */
       .loc-grid { grid-template-columns: 1fr !important; gap: 0.4rem !important; }
       .loc-card img { height: 260px !important; }
@@ -546,7 +557,7 @@
       <div class="photo-gallery g2">
         <img src="foto_web/IMG_1466.jpg" alt="Sala ristorante" loading="lazy">
         <img src="foto_web/IMG_0629.jpg" alt="Cena a lume di candela" loading="lazy">
-        <img src="foto_web/AJ2A3028.jpg" alt="Sven nell'orto" loading="lazy" style="object-position: center top;">
+        <img src="foto_web/AJ2A3020.jpg" alt="Sven nell'orto" loading="lazy" style="object-position: center top;">
         <img src="foto_web/IMG_1457.jpg" alt="Momento conviviale" loading="lazy">
       </div>
     </div>
@@ -657,8 +668,8 @@
 <!-- TESTIMONIAL -->
 <section style="background:var(--cream); padding:6rem 2rem;">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 2fr; gap:5rem; align-items:center; max-width:900px; margin:0 auto;">
-      <div>
+    <div class="testimonial-layout" style="display:grid; grid-template-columns:1fr 2fr; gap:5rem; align-items:center; max-width:900px; margin:0 auto;">
+      <div class="testimonial-photo" style="max-width:220px; margin:0 auto;">
         <img src="foto_web/testimonial.jpg" alt="Lorenzo" loading="lazy"
           style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%; display:block; filter:grayscale(15%);">
       </div>
