@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTENTICA — Quello che resta è come ti sei sentito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="AUTENTICA — Eventi privati e aziendali, matrimoni e incontri immersivi tra natura e design nella Valle Benedetta, Livorno. weareautentica.it">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:     #f5f0e8;
+      --sage:      #7a8c6e;
+      --sage-dark: #4e5e44;
+      --terra:     #b06d45;
+      --brown:     #3e2c1e;
+      --gold:      #c9a24a;
+      --white:     #ffffff;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans:  'Jost', 'Helvetica Neue', Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--cream); color: var(--brown); line-height: 1.6; font-weight: 300; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(62,44,30,0.92); backdrop-filter: blur(8px);
+      padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    nav .logo { font-family: 'Jost', sans-serif; color: var(--gold); font-size: 0.95rem; letter-spacing: 0.42em; text-decoration: none; font-weight: 300; text-transform: uppercase; }
+    nav ul { list-style: none; display: flex; gap: 1.8rem; }
+    nav ul a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.75; font-weight: 300; transition: opacity 0.2s; }
+    nav ul a:hover { opacity: 1; color: var(--gold); }
+
+    /* HERO */
+    .hero { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .hero-bg { position: absolute; inset: 0; background: url('foto_web/IMG_1473.jpg') center/cover no-repeat; transform: scale(1.05); animation: heroZoom 14s ease-out forwards; }
+    @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.0); } }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,20,10,0.2) 0%, rgba(30,20,10,0.52) 100%); }
+    .hero-content { position: relative; z-index: 1; text-align: center; color: var(--white); padding: 2rem; animation: fadeUp 1.2s ease 0.3s both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 300; }
+    .hero-title { font-family: var(--font-serif); font-size: clamp(3rem,7vw,5.5rem); font-weight: 300; letter-spacing: 0.02em; line-height: 1.15; margin-bottom: 1.2rem; }
+    .hero-sub { font-size: clamp(1rem,2vw,1.2rem); opacity: 0.9; max-width: 580px; margin: 0 auto 2.2rem; line-height: 1.7; }
+    .btn { display: inline-block; padding: 0.9rem 2.6rem; border: 1px solid var(--gold); color: var(--white); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; transition: background 0.25s, color 0.25s; font-weight: 300; }
+    .btn:hover { background: var(--gold); color: var(--brown); }
+    .btn-solid { background: transparent; border-color: var(--brown); color: var(--brown); letter-spacing: 0.16em; }
+    .btn-solid:hover { background: var(--brown); border-color: var(--brown); color: var(--white); }
+    .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; color: rgba(255,255,255,0.6); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .hero-scroll::after { content: ''; display: block; width: 1px; height: 40px; background: rgba(255,255,255,0.4); animation: scrollLine 1.6s ease-in-out infinite; }
+    @keyframes scrollLine { 0%,100% { opacity: 0.3; height: 20px; } 50% { opacity: 0.9; height: 40px; } }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.68rem; letter-spacing: 0.36em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.8rem; font-weight: 300; }
+    .section-title { font-family: var(--font-serif); font-size: clamp(2rem,4.5vw,3.2rem); font-weight: 300; letter-spacing: 0.01em; color: var(--brown); margin-bottom: 1.4rem; }
+    .section-lead { font-size: 1.05rem; max-width: 640px; margin: 0 auto; color: #5a4030; line-height: 1.9; font-weight: 300; }
+    .divider { width: 48px; height: 2px; background: var(--gold); margin: 1.8rem auto; }
+
+    /* GALLERY STRIP */
+    .gallery-strip { padding: 0; overflow-x: auto; display: flex; gap: 6px; background: var(--brown); scrollbar-width: thin; scrollbar-color: var(--gold) var(--brown); }
+    .gallery-strip img { height: 420px; width: auto; flex-shrink: 0; object-fit: cover; display: block; transition: opacity 0.3s; }
+    .gallery-strip img:hover { opacity: 0.82; }
+
+    /* STATS */
+    .stats-bar { background: var(--sage-dark); padding: 3.5rem 2rem; }
+    .stats-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center; }
+    .stat-item .num { font-family: var(--font-serif); font-size: 2.6rem; color: var(--gold); display: block; }
+    .stat-item .label { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,240,232,0.75); }
+
+    /* LOCATION CARDS */
+    .loc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 3rem; }
+    .loc-card { position: relative; overflow: hidden; cursor: pointer; }
+    .loc-card img { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .loc-card:hover img { transform: scale(1.04); }
+    .loc-card .card-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(30,20,10,0.82) 0%, transparent 100%); padding: 2rem 1.4rem 1.2rem; color: var(--white); }
+    .card-label h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 300; margin-bottom: 0.2rem; letter-spacing: 0.02em; }
+    .card-label p { font-size: 0.8rem; opacity: 0.8; letter-spacing: 0.06em; }
+
+    /* LOCATION DETAIL */
+    .loc-detail { padding: 8rem 2rem; }
+    .loc-detail:nth-of-type(odd) { background: var(--white); }
+    .loc-detail:nth-of-type(even) { background: var(--cream); }
+    .loc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .loc-layout.reverse { direction: rtl; }
+    .loc-layout.reverse > * { direction: ltr; }
+    .loc-text .tag { display: inline-block; background: var(--sage); color: var(--white); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.25rem 0.7rem; margin-bottom: 1rem; }
+    .loc-text h2 { font-family: var(--font-serif); font-size: clamp(2rem,3.5vw,2.8rem); font-weight: 300; color: var(--brown); margin-bottom: 1rem; line-height: 1.2; letter-spacing: 0.01em; }
+    .loc-text p { color: #5a4030; line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
+    .loc-text .specs { margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .spec-pill { background: rgba(122,140,110,0.12); border: 1px solid rgba(122,140,110,0.3); color: var(--sage-dark); font-size: 0.78rem; padding: 0.3rem 0.9rem; border-radius: 20px; letter-spacing: 0.04em; }
+
+    /* PHOTO GRID */
+    .photo-gallery { display: grid; gap: 6px; }
+    .photo-gallery.g2 { grid-template-columns: 1fr 1fr; }
+    .photo-gallery.g3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+    .photo-gallery img { width: 100%; height: 260px; object-fit: cover; display: block; transition: opacity 0.3s; }
+    .photo-gallery img:hover { opacity: 0.88; }
+    /* biforcazione hover */
+    #esperienze a:hover img { transform: scale(1.03); }
+    #esperienze a:hover span { border-color: var(--gold); color: var(--gold); }
+    .photo-gallery .tall { grid-row: span 2; }
+    .photo-gallery .tall img { height: 100%; min-height: 526px; }
+
+    /* QUOTE */
+    .quote-section { background: var(--brown); text-align: center; padding: 6rem 2rem; }
+    .quote-section blockquote { font-family: var(--font-serif); font-size: clamp(1.6rem,3.5vw,2.4rem); font-weight: 300; font-style: italic; color: var(--cream); max-width: 760px; margin: 0 auto 1.4rem; line-height: 1.6; letter-spacing: 0.01em; }
+    .quote-section cite { color: var(--gold); font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; font-style: normal; }
+
+    /* CONTACT */
+    .contact-form { max-width: 560px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 0.9rem 1.2rem; border: 1px solid rgba(62,44,30,0.2); background: var(--white); font-family: var(--font-sans); font-size: 0.95rem; color: var(--brown); outline: none; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--sage); }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form .row { display: flex; gap: 1rem; }
+    .contact-form .row > * { flex: 1; }
+
+    /* FOOTER */
+    footer { background: var(--brown); color: rgba(245,240,232,0.65); text-align: center; padding: 3rem 2rem; font-size: 0.82rem; letter-spacing: 0.06em; }
+    footer .footer-logo { font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold); display: block; margin-bottom: 0.8rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      #esperienze > div:last-child { grid-template-columns: 1fr !important; }
+      .loc-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .loc-layout.reverse { direction: ltr; }
+      .photo-gallery.g2, .photo-gallery.g3 { grid-template-columns: 1fr; }
+      .photo-gallery .tall { grid-row: span 1; }
+      .photo-gallery img, .photo-gallery .tall img { height: 240px; min-height: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo" style="font-size:1.3rem;letter-spacing:0.22em;font-weight:normal;">AUTENTICA</a>
+  <ul>
+    <li><a href="#aziende">Aziende</a></li>
+    <li><a href="#matrimoni">Occasioni Speciali</a></li>
+    <li><a href="#pedana">Esperienze</a></li>
+    <li><a href="#locations">Le Location</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:1rem; letter-spacing:0.45em; text-transform:uppercase; color:#fff; opacity:0.95; margin-bottom:1.4rem; font-weight:300;">AUTENTICA</p>
+    <p class="hero-eyebrow">Valle Benedetta · Livorno · A 10 minuti dalla città</p>
+    <h1 class="hero-title">Quello che resta<br>è come ti sei sentito</h1>
+    <p class="hero-sub">Eventi, matrimoni e incontri immersivi tra natura e design, a pochi minuti da Livorno.</p>
+    <a href="#contatti" class="btn">Raccontaci il tuo evento</a>
+  </div>
+  <div class="hero-scroll">Scopri</div>
+</section>
+
+<!-- INTRO -->
+<section style="background:#fff;" id="intro">
+  <div class="container">
+    <p class="section-eyebrow" style="text-align:center">weareautentica.it · Valle Benedetta, Livorno</p>
+    <h2 class="section-title" style="text-align:center">Non è una location.<br>È un modo di vivere gli eventi.</h2>
+    <div class="divider"></div>
+    <p class="section-lead" style="text-align:center">
+      Qui non affitti uno spazio. Crei un'esperienza.<br>Tra natura, design e cura autentica — a 10 minuti dalla città, in un altro mondo.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY STRIP 1 -->
+<div class="gallery-strip">
+  <img src="foto_web/IMG_1466.jpg"   alt="Sala ristorante">
+  <img src="foto_web/IMG_0629.jpg"   alt="Cena a lume di candela">
+  <img src="foto_web/IMG_1471.jpg"   alt="Chef in natura">
+  <img src="foto_web/IMG_6580_v.jpg" alt="Tramonto sulla Pedana">
+  <img src="foto_web/IMG_5343.jpg"   alt="Evento serale outdoor">
+  <img src="foto_web/IMG_5341.jpg"   alt="Aperitivo nel verde">
+  <img src="foto_web/IMG_6645.jpg"   alt="Momento al tramonto">
+  <img src="foto_web/IMG_1473.jpg"   alt="Panorama colline livornesi">
+</div>
+
+<!-- BIFORCAZIONE -->
+<section style="background:var(--white); padding:5rem 2rem;" id="esperienze">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center">Per chi è AUTENTICA</h2>
+    <div class="divider"></div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3rem; margin-top:3.5rem;">
+
+      <!-- AZIENDE -->
+      <a href="#aziende" style="text-decoration:none; display:flex; flex-direction:column; gap:1.4rem;">
+        <div style="overflow:hidden;">
+          <img src="foto_web/IMG_0974.jpg" alt="Esperienze aziendali"
+            style="width:100%; height:320px; object-fit:cover; display:block; object-position:center; transition:transform 0.6s ease;">
+        </div>
+        <div>
+          <p style="font-size:0.62rem; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; font-family:'Jost',sans-serif; font-weight:300;">Ben-Essere Aziendale</p>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:300; color:var(--brown); margin-bottom:0.7rem; line-height:1.25;">Porta il tuo team<br>fuori dall'ordinario</h3>
+          <p style="font-size:0.88rem; color:#5a4030; line-height:1.75; font-weight:300; font-family:'Jost',sans-serif; margin-bottom:1.2rem;">Per team che vogliono allinearsi davvero, in un contesto che ispira davvero.</p>
+          <span style="font-size:0.62rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--brown); font-family:'Jost',sans-serif; font-weight:300; border-bottom:1px solid var(--brown); padding-bottom:2px;">Scopri →</span>
+        </div>
+      </a>
+
+      <!-- OCCASIONI SPECIALI -->
+      <a href="#matrimoni" style="text-decoration:none; display:flex; flex-direction:column; gap:1.4rem;">
+        <div style="overflow:hidden;">
+          <img src="foto_web/IMG_5343.jpg" alt="Occasioni speciali"
+            style="width:100%; height:320px; object-fit:cover; display:block; object-position:center 40%; transition:transform 0.6s ease;">
+        </div>
+        <div>
+          <p style="font-size:0.62rem; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; font-family:'Jost',sans-serif; font-weight:300;">Occasioni Speciali</p>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:300; color:var(--brown); margin-bottom:0.7rem; line-height:1.25;">Un giorno che non<br>assomiglia a nessun altro</h3>
+          <p style="font-size:0.88rem; color:#5a4030; line-height:1.75; font-weight:300; font-family:'Jost',sans-serif; margin-bottom:1.2rem;">Matrimoni, anniversari e celebrazioni private — per chi non cerca un evento, ma qualcosa che resti.</p>
+          <span style="font-size:0.62rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--brown); font-family:'Jost',sans-serif; font-weight:300; border-bottom:1px solid var(--brown); padding-bottom:2px;">Scopri →</span>
+        </div>
+      </a>
+
+      <!-- ESPERIENZE & WELLBEING -->
+      <a href="#pedana" style="text-decoration:none; display:flex; flex-direction:column; gap:1.4rem;">
+        <div style="overflow:hidden;">
+          <img src="foto_web/Screenshot_2026-04-021.jpg" alt="Esperienze e Wellbeing"
+            style="width:100%; height:320px; object-fit:cover; display:block; object-position:center top; transition:transform 0.6s ease;">
+        </div>
+        <div>
+          <p style="font-size:0.62rem; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; font-family:'Jost',sans-serif; font-weight:300;">Wellbeing &amp; Experiences</p>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:300; color:var(--brown); margin-bottom:0.7rem; line-height:1.25;">Esperienze che ti portano<br>a sentire davvero</h3>
+          <p style="font-size:0.88rem; color:#5a4030; line-height:1.75; font-weight:300; font-family:'Jost',sans-serif; margin-bottom:1.2rem;">Per chi sente che serve qualcosa di diverso.</p>
+          <span style="font-size:0.62rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--brown); font-family:'Jost',sans-serif; font-weight:300; border-bottom:1px solid var(--brown); padding-bottom:2px;">Scopri →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TRE RAGIONI -->
+<section style="background:var(--cream);">
+  <div class="container">
+    <p class="section-eyebrow" style="text-align:center">La differenza che si sente</p>
+    <h2 class="section-title" style="text-align:center">Perché scegliere<br>AUTENTICA</h2>
+    <div class="divider"></div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:3rem; margin-top:3.5rem; text-align:center;">
+      <div>
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem;">
+  <path d="M19 34 C19 34 6 26 6 14 C6 8 12 4 19 4 C26 4 32 8 32 14 C32 26 19 34 19 34Z" stroke="#7a8c6e" stroke-width="1.2" fill="none"/>
+  <line x1="19" y1="34" x2="19" y2="14" stroke="#7a8c6e" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="19" y1="20" x2="26" y2="15" stroke="#7a8c6e" stroke-width="1"/>
+  <line x1="19" y1="26" x2="13" y2="21" stroke="#7a8c6e" stroke-width="1"/>
+</svg>
+        <h3 style="font-family:var(--font-serif); font-weight:normal; font-size:1.3rem; color:var(--brown); margin-bottom:0.8rem;">L'ambiente trasforma l'evento</h3>
+        <p style="color:#5a4030; font-size:0.95rem; line-height:1.8;">Il verde, il silenzio, la luce delle colline livornesi non sono scenografia — sono parte dell'esperienza. Ogni ospite lo sente appena arriva. Succede ogni volta, senza eccezioni.</p>
+      </div>
+      <div>
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem;">
+  <circle cx="19" cy="19" r="13" stroke="#7a8c6e" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <circle cx="19" cy="19" r="3" fill="#c9a24a"/>
+  <line x1="19" y1="6" x2="19" y2="4" stroke="#7a8c6e" stroke-width="1.2"/>
+  <line x1="19" y1="34" x2="19" y2="32" stroke="#7a8c6e" stroke-width="1.2"/>
+  <line x1="6" y1="19" x2="4" y2="19" stroke="#7a8c6e" stroke-width="1.2"/>
+  <line x1="34" y1="19" x2="32" y2="19" stroke="#7a8c6e" stroke-width="1.2"/>
+</svg>
+        <h3 style="font-family:var(--font-serif); font-weight:normal; font-size:1.3rem; color:var(--brown); margin-bottom:0.8rem;">Ogni dettaglio è su misura</h3>
+        <p style="color:#5a4030; font-size:0.95rem; line-height:1.8;">Nessun evento è uguale all'altro. Lo Chef Simone Cipriani crea ogni esperienza gastronomica in modo specifico per voi — stagionale, etica, plant-based — con ingredienti colti dall'orto quella mattina.</p>
+      </div>
+      <div>
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem;">
+  <path d="M8 22 C8 22 10 18 13 16 L13 10 C13 9 14 8 15 9 L15 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M15 12 C15 11 16 10 17 11 L17 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M17 13 C17 12 18 11 19 12 L19 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M19 14 C19 13 20 12 21 13 L21 20 C21 24 17 28 13 29 L8 29" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M30 22 C30 22 28 18 25 16 L25 10 C25 9 24 8 23 9 L23 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M23 12 C23 11 22 10 21 11" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+</svg>
+        <h3 style="font-family:var(--font-serif); font-weight:normal; font-size:1.3rem; color:var(--brown); margin-bottom:0.8rem;">Cura che si sente</h3>
+        <p style="color:#5a4030; font-size:0.95rem; line-height:1.8;">Il nostro personale <em>enjoys to serve</em>: è qui per scelta, non per contratto. Durante il tuo evento ogni ospite viene trattato come se fosse l'unico che conta. Lo si percepisce — e si ricorda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AZIENDE -->
+<section style="background:var(--sage-dark); padding:6rem 2rem;" id="aziende">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+      <div style="color:var(--cream);">
+        <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Per le aziende</p>
+        <p style="font-size:0.95rem; color:rgba(245,240,232,0.65); margin-bottom:0.8rem; font-style:italic;">Per team che vogliono ottenere qualcosa di più</p>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; line-height:1.2; margin-bottom:1.4rem;">Quando le persone escono<br>dal contesto abituale,<br>cambia tutto</h2>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:2.4rem; font-size:0.97rem;">Attenzione, energia, qualità delle relazioni. Dalla sala meeting ai momenti condivisi, ogni esperienza è pensata per creare allineamento reale.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem;">
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Meeting strategici</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Team building</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Presentazioni</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Ritiri aziendali</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Cene di team</span>
+        </div>
+        <a href="#contatti" class="btn" style="border-color:var(--gold); color:var(--gold);">Porta il tuo team qui</a>
+      </div>
+      <div>
+        <img src="foto_web/persone_lavorano.jpg" alt="Team al lavoro a Valle Benedetta" loading="lazy" style="width:100%; object-fit:cover; height:480px; display:block; object-position:center top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONI SPECIALI -->
+<section style="background:var(--cream); padding:6rem 2rem;" id="matrimoni">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+      <div>
+        <img src="foto_web/IMG_4026.jpg" alt="Occasioni Speciali Valle Benedetta" loading="lazy" style="width:100%; object-fit:cover; height:480px; display:block; object-position: center center;">
+      </div>
+      <div>
+        <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--terra); margin-bottom:0.8rem;">Occasioni Speciali</p>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; color:var(--brown); line-height:1.2; margin-bottom:1.4rem;">Un giorno che non<br>assomiglia a nessun altro.</h2>
+        <p style="color:#5a4030; line-height:1.9; margin-bottom:2.4rem; font-size:0.97rem;">Non una location in affitto, ma un luogo vivo.<br>Ogni momento prende forma intorno a voi: la cerimonia, la cena, l'atmosfera.<br>Non si tratta di organizzare un evento. Si tratta di vivere qualcosa che resta.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem;">
+          <span class="spec-pill">Matrimoni</span>
+          <span class="spec-pill">Anniversari</span>
+          <span class="spec-pill">Fidanzamenti</span>
+          <span class="spec-pill">Compleanni importanti</span>
+          <span class="spec-pill">Cene private</span>
+          <span class="spec-pill">Celebrazioni private</span>
+        </div>
+        <a href="#contatti" class="btn btn-solid">Inizia a immaginare il tuo giorno</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION OVERVIEW -->
+<section style="background:var(--white);" id="locations">
+  <div class="container">
+    <p class="section-eyebrow" style="text-align:center">Dove tutto accade</p>
+    <h2 class="section-title" style="text-align:center">Un ecosistema<br>di esperienze</h2>
+    <div class="divider"></div>
+    <p style="text-align:center; color:#5a4030; max-width:560px; margin:0 auto 1rem; font-size:0.97rem; line-height:1.8;">Combina luoghi, momenti e atmosfere per creare qualcosa che non si replica altrove.</p>
+    <div class="loc-grid">
+      <a href="#villa-sala" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="foto_web/sala_conference.jpg" alt="Sala Riunioni" loading="lazy">
+          <div class="card-label">
+            <h3>Sala Riunioni</h3>
+            <p>Villa Sambuca · 80 mq</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Scopri →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#villa-ristorante" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="foto_web/IMG_1466.jpg" alt="Sala Ristorante" loading="lazy">
+          <div class="card-label">
+            <h3>RistorOrto Farm to Table</h3>
+            <p>Villa Sambuca · fino a 80 persone</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Scopri →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#serra-bar" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="foto_web/Screenshot_2026-04-02.jpg" alt="Alla Serra Bar Agricolo" loading="lazy">
+          <div class="card-label">
+            <h3>Alla Serra Bar Agricolo</h3>
+            <p>Azienda Agricola · fino a 150 persone</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Scopri →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#serra-aeroponica" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="foto_web/IMG_1471.jpg" alt="Dentro la Serra" loading="lazy">
+          <div class="card-label">
+            <h3>Dentro la Serra</h3>
+            <p>Cene esclusive · esperienze gastronomiche</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Scopri →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#pedana-detail" style="text-decoration:none;">
+        <div class="loc-card">
+          <img src="foto_web/Screenshot_2026-04-021.jpg" alt="La Pedana" loading="lazy">
+          <div class="card-label">
+            <h3>La Pedana</h3>
+            <p>Spazio outdoor · musica, danza, eventi speciali</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Scopri →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#villa-huygens" style="text-decoration:none;">
+        <div class="loc-card" style="position:relative; overflow:hidden; outline:2px solid var(--gold); outline-offset:-2px;">
+          <img src="foto_web/villa_huygens.jpg" alt="Villa Huygens 1705" loading="lazy">
+          <div class="card-label">
+            <p style="font-size:0.6rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; font-family:'Jost',sans-serif;">Accesso anticipato · 2027</p>
+            <h3>Villa Huygens 1705</h3>
+            <p>Dimora storica · cappella privata · lista d'attesa</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Richiedi accesso →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VILLA HUYGENS 1705 -->
+<section style="background:var(--brown); padding:7rem 2rem;" id="villa-huygens">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+      <div>
+        <img src="foto_web/villa_huygens.jpg" alt="Villa Huygens 1705" loading="lazy"
+          style="width:100%; object-fit:cover; height:500px; display:block; object-position:center 60%;">
+      </div>
+      <div style="color:var(--cream);">
+        <p style="font-size:0.72rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem;">Accesso anticipato per eventi 2027</p>
+        <h2 style="font-family:'Georgia',serif; font-size:clamp(1.6rem,3.5vw,2.6rem); font-weight:normal; line-height:1.2; margin-bottom:1.4rem;">Un luogo che esiste dal 1705.<br>E che pochi potranno<br>vivere per primi.</h2>
+        <p style="font-size:1.05rem; color:var(--gold); letter-spacing:0.12em; margin-bottom:1.4rem; font-family:'Georgia',serif; font-style:italic;">Villa Huygens 1705</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1rem; font-size:0.97rem;">Una dimora storica immersa nella Valle Benedetta, con cappella privata, attualmente in fase di recupero. Un luogo che attraversa i secoli e torna a vivere per accogliere matrimoni ed eventi intimi e senza tempo.</p>
+        <div style="margin: 1.6rem 0; padding-left:1.2rem; border-left:1px solid rgba(201,162,74,0.4);">
+          <p style="opacity:0.75; font-size:0.9rem; margin-bottom:0.4rem;">→ Disponibile dal prossimo anno.</p>
+          <p style="opacity:0.75; font-size:0.9rem;">→ Già oggi riservabile in anteprima.</p>
+        </div>
+        <a href="#contatti" style="display:inline-block; padding:0.9rem 2.2rem; border:1px solid var(--gold); color:var(--gold); text-decoration:none; font-size:0.78rem; letter-spacing:0.2em; text-transform:uppercase; transition:background 0.25s, color 0.25s; margin-right:1rem;">Richiedi accesso anticipato</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="num">5</span><span class="label">Location Uniche</span></div>
+    <div class="stat-item"><span class="num">150+</span><span class="label">Persone (max)</span></div>
+    <div class="stat-item"><span class="num">100%</span><span class="label">Biologico</span></div>
+    <div class="stat-item"><span class="num">10'</span><span class="label">Dal centro città</span></div>
+  </div>
+</div>
+
+<!-- SALA RIUNIONI DETAIL -->
+<section class="loc-detail" id="villa-sala">
+  <div class="container">
+    <div class="loc-layout">
+      <div class="loc-text">
+        <span class="tag">Villa Sambuca</span>
+        <h2>Sala Riunioni &amp; Conference</h2>
+        <p>Luce naturale, vista sul verde, silenzio. La sala da 80 mq si configura in teatro, U-shape o workshop — con schermo interattivo e sistema audio. L'ambiente fa già la metà del lavoro.</p>
+        <a href="#contatti" class="btn btn-solid">Richiedi disponibilità</a>
+      </div>
+      <img src="foto_web/mg9700_copia.jpg" alt="Sala riunioni" loading="lazy"
+        style="width:100%; height:520px; object-fit:cover; display:block; object-position:center center;">
+    </div>
+  </div>
+</section>
+
+<!-- RISTORANTE DETAIL -->
+<section class="loc-detail" id="villa-ristorante">
+  <div class="container">
+    <div class="loc-layout reverse">
+      <div class="loc-text">
+        <span class="tag">Villa Sambuca</span>
+        <h2>RistorOrto Farm to Table</h2>
+        <p>Fino a 30 persone all'interno, 80 con buffet all'aperto. In cucina c'è lo Chef Simone Cipriani: ogni piatto è espressione della sua maestria e di ingredienti appena colti dall'orto. Non una cucina che accompagna — una cucina che protagonista.</p>
+        <a href="#contatti" class="btn btn-solid">Richiedi disponibilità</a>
+      </div>
+      <div class="photo-gallery g2">
+        <img src="foto_web/IMG_1466.jpg" alt="Sala ristorante" loading="lazy">
+        <img src="foto_web/IMG_0629.jpg" alt="Cena a lume di candela" loading="lazy">
+        <img src="foto_web/AJ2A3028.jpg" alt="Sven nell'orto" loading="lazy" style="object-position: center top;">
+        <img src="foto_web/IMG_1457.jpg" alt="Momento conviviale" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP 2 -->
+<div class="gallery-strip">
+  <img src="foto_web/IMG_05572.jpg"  alt="Evento">
+  <img src="foto_web/IMG_5343.jpg"   alt="Evento">
+  <img src="foto_web/IMG_6582.jpg"   alt="Tramonto sulla Pedana">
+  <img src="foto_web/IMG_3828.jpg"   alt="Mangiare è un atto agricolo">
+  <img src="foto_web/IMG_06272.jpg"  alt="Evento">
+  <img src="foto_web/IMG_6739.jpg"   alt="Evento">
+  <img src="foto_web/IMG_4630.jpg"   alt="Evento">
+  <img src="foto_web/IMG_0926.jpg"   alt="Evento">
+  <img src="foto_web/IMG_5598.jpg"   alt="Evento">
+  <img src="foto_web/IMG_1342.jpg"   alt="Evento">
+</div>
+
+<!-- ALLA SERRA -->
+<section class="loc-detail" id="serra-bar">
+  <div class="container">
+    <div class="loc-layout">
+      <div class="loc-text">
+        <span class="tag">Azienda Agricola</span>
+        <h2>Alla Serra<br>Bar Agricolo</h2>
+        <p>Circondato dagli orti e dai prati. Fino a 150 persone tra il verde dell'azienda biologica, con un'estetica natural-farm che non si trova altrove. Per chi vuole un evento che si ricorda per quello che si è sentito, e per la scenografia autentica.</p>
+        <a href="#contatti" class="btn btn-solid">Richiedi disponibilità</a>
+      </div>
+      <div class="photo-gallery g3">
+        <div class="tall">
+          <img src="foto_web/Screenshot_2026-04-02.jpg" alt="Alla Serra esterno" loading="lazy">
+        </div>
+        <img src="foto_web/IMG_5342.jpg" alt="Evento outdoor" loading="lazy" style="object-position:center top;">
+        <img src="foto_web/bambino.jpg" alt="Bambino a Valle Benedetta" loading="lazy" style="object-position:center top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DENTRO LA SERRA -->
+<section class="loc-detail" id="serra-aeroponica">
+  <div class="container">
+    <div class="loc-layout reverse">
+      <div class="loc-text">
+        <span class="tag">Esperienza Esclusiva</span>
+        <h2>Dentro la Serra</h2>
+        <p>Una cena privata immersi nelle torri aeroponiche in piena produzione. Profumi di erbe fresche, luci calde, una tavola apparecchiata con quello che cresce a pochi centimetri da voi. Per chi cerca qualcosa che non si replica.</p>
+        <a href="#contatti" class="btn btn-solid">Richiedi informazioni</a>
+      </div>
+      <div class="photo-gallery g3">
+        <div class="tall">
+          <img src="foto_web/dentroserra.jpg" alt="Torri aeroponiche dentro la serra" loading="lazy" style="object-position:center center;">
+        </div>
+        <img src="foto_web/fiori.jpg" alt="Fiori dentro la serra" loading="lazy">
+        <img src="foto_web/piattiserra.jpg" alt="Piatti della serra" loading="lazy" style="object-position:center top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPERIENZE & WELLBEING -->
+<section style="background:var(--sage-dark); padding:6rem 2rem;" id="pedana">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+      <div style="color:var(--cream);">
+        <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Wellbeing &amp; Experiences</p>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; line-height:1.2; margin-bottom:1.4rem;">Tra natura,<br>benessere e connessione</h2>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:2.4rem; font-size:0.97rem;">Celebrate le vostre occasioni speciali con il dono del benessere, della natura e della condivisione. Cene, rituali e momenti immersivi pensati intorno a voi.<br>Per uscire diversi da come siete entrati.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem;">
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Retreat</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Yoga &amp; Mindfulness</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Laboratori esperienziali</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Concerti live</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Team building nature-based</span>
+        </div>
+        <a href="#contatti" class="btn" style="border-color:var(--gold); color:var(--gold);">Esplora le possibilità</a>
+      </div>
+      <div>
+        <img src="foto_web/IMG_6773.jpg" alt="Esperienze outdoor Valle Benedetta" loading="lazy" style="width:100%; object-fit:cover; height:480px; display:block; object-position:center top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LA PEDANA DETTAGLIO -->
+<section class="loc-detail" id="pedana-detail">
+  <div class="container">
+    <div class="loc-layout">
+      <div class="loc-text">
+        <span class="tag">Azienda Agricola</span>
+        <h2>La Pedana</h2>
+        <p>Palco naturale affacciato sulle colline e sulla costa. Per musica live, danza, laboratori, concerti intimi. L'atmosfera fa il resto — il verde, la luce, il silenzio rotto solo dalla musica.</p>
+        <a href="#contatti" class="btn btn-solid">Richiedi disponibilità</a>
+      </div>
+      <div class="photo-gallery g3">
+        <div class="tall">
+          <img src="foto_web/Screenshot_2026-04-021.jpg" alt="La Pedana danza" loading="lazy" style="object-position:center top;">
+        </div>
+        <img src="foto_web/IMG_6580_v.jpg" alt="Tramonto sulla Pedana" loading="lazy">
+        <img src="foto_web/pedana1.jpg" alt="La Pedana" loading="lazy" style="object-position:center top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section style="background:var(--cream); padding:6rem 2rem;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 2fr; gap:5rem; align-items:center; max-width:900px; margin:0 auto;">
+      <div>
+        <img src="foto_web/testimonial.jpg" alt="Lorenzo" loading="lazy"
+          style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%; display:block; filter:grayscale(15%);">
+      </div>
+      <div>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,2.5vw,1.9rem); font-weight:300; color:var(--brown); line-height:1.6; font-style:italic; margin-bottom:1.8rem;">"C'è un momento, a Valle Benedetta, in cui smetti di pensare al programma. Rimani, e basta. E vedi tutti felici."</p>
+        <p style="font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); font-family:'Jost',sans-serif; font-weight:300;">— Lorenzo e Caterina</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <blockquote>
+    "I tuoi ospiti dimenticheranno il menu. Dimenticheranno i fiori. Non dimenticheranno mai come li hai fatti sentire."
+  </blockquote>
+  <cite>— AUTENTICA, Valle Benedetta</cite>
+</section>
+
+<!-- CONTATTI -->
+<section style="background:var(--cream); text-align:center;" id="contatti">
+  <div class="container">
+    <p class="section-eyebrow">Siamo qui, tutti i giorni</p>
+    <h2 class="section-title">Raccontaci il tuo evento</h2>
+    <div class="divider"></div>
+    <p class="section-lead" style="text-align:center; font-family:'Georgia',serif; font-style:italic; font-size:1.15rem; color:var(--brown);">Ogni evento inizia da una conversazione.</p>
+    <p class="section-lead" style="text-align:center; margin-top:0.8rem;">Non siamo un portale di prenotazioni — siamo persone in carne e ossa che rispondono entro 24 ore con una proposta su misura.</p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="row">
+        <input type="text" placeholder="Nome e Cognome" required>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <input type="tel" placeholder="Telefono (opzionale)">
+      <select required>
+        <option value="" disabled selected>Scegli la location…</option>
+        <option>Sala Riunioni — Villa Sambuca</option>
+        <option>RistorOrto Farm to Table — Villa Sambuca</option>
+        <option>Alla Serra Bar Agricolo</option>
+        <option>Dentro la Serra (aeroponica)</option>
+        <option>La Pedana</option>
+        <option>Più location / Da definire</option>
+      </select>
+      <div class="row">
+        <input type="date" placeholder="Data evento">
+        <input type="number" placeholder="N° ospiti previsti" min="1">
+      </div>
+      <textarea placeholder="Descrivi il tuo evento: tipo di occasione, esigenze particolari, catering…"></textarea>
+      <button type="submit" class="btn btn-solid" style="padding:1rem; font-size:0.88rem; cursor:pointer; border:none; letter-spacing:0.16em">PARLACI DEL TUO EVENTO</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo" style="font-family:'Jost',sans-serif; font-size:1rem; letter-spacing:0.48em; font-weight:300;">AUTENTICA</span>
+  <p style="margin-bottom:0.3rem;color:var(--gold);font-size:0.8rem;letter-spacing:0.1em;">weareautentica.it</p>
+  <p>Valle Benedetta · Azienda Agricola Biologica · Livorno, Toscana</p>
+  <p style="margin-top:0.4rem"><a href="mailto:eraldo@vallebenedetta.org">eraldo@vallebenedetta.org</a></p>
+  <p style="margin-top:1.2rem; opacity:0.45; font-size:0.75rem">© 2026 AUTENTICA · Valle Benedetta · Tutti i diritti riservati</p>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = '✓ RICHIESTA INVIATA';
+    btn.style.background = 'var(--sage-dark)';
+    setTimeout(() => { btn.textContent = 'PARLACI DEL TUO EVENTO'; btn.style.background = ''; e.target.reset(); }, 3000);
+  }
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
+  });
+</script>
+</body>
+</html>
