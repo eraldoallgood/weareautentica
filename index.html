@@ -139,9 +139,37 @@
       @keyframes swipeArrow { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
     }
 
+    /* TWO-COL GRID */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       nav ul { display: none; }
+
+      /* Sezioni padding */
+      section { padding: 3.5rem 1.4rem !important; }
+
+      /* Due colonne → una colonna, foto sempre sopra */
+      .two-col {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.8rem !important;
+      }
+      .two-col > div:first-child { order: 2; }
+      .two-col > div:last-child { order: 1; }
+      /* Se la foto è nel primo div, la mettiamo prima */
+      .two-col > div:first-child img ~ * { display: block; }
+      .two-col img {
+        width: 100% !important;
+        height: 280px !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+      /* Occasioni speciali e Villa Huygens: foto è nel primo div = deve stare sopra */
+      #matrimoni .two-col > div:first-child,
+      #villa-huygens .two-col > div:first-child { order: 1; }
+      #matrimoni .two-col > div:last-child,
+      #villa-huygens .two-col > div:last-child { order: 2; }
 
       /* 3-card scroll orizzontale */
       #esperienze .exp-grid {
@@ -162,6 +190,10 @@
         flex: 0 0 80vw;
         scroll-snap-align: start;
       }
+
+      /* Location cards grid → 1 colonna */
+      .loc-grid { grid-template-columns: 1fr !important; gap: 0.4rem !important; }
+      .loc-card img { height: 260px !important; }
 
       .loc-layout { grid-template-columns: 1fr; gap: 2rem; }
       .loc-layout.reverse { direction: ltr; }
@@ -331,7 +363,7 @@
 <!-- AZIENDE -->
 <section style="background:var(--sage-dark); padding:6rem 2rem;" id="aziende">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+    <div class="two-col">
       <div style="color:var(--cream);">
         <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Per le aziende</p>
         <p style="font-size:0.95rem; color:rgba(245,240,232,0.65); margin-bottom:0.8rem; font-style:italic;">Per team che vogliono ottenere qualcosa di più</p>
@@ -356,7 +388,7 @@
 <!-- OCCASIONI SPECIALI -->
 <section style="background:var(--cream); padding:6rem 2rem;" id="matrimoni">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+    <div class="two-col">
       <div>
         <img src="foto_web/IMG_4026.jpg" alt="Occasioni Speciali Valle Benedetta" loading="lazy" style="width:100%; object-fit:cover; height:480px; display:block; object-position: center center;">
       </div>
@@ -454,7 +486,7 @@
 <!-- VILLA HUYGENS 1705 -->
 <section style="background:var(--brown); padding:7rem 2rem;" id="villa-huygens">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+    <div class="two-col">
       <div>
         <img src="foto_web/villa_huygens.jpg" alt="Villa Huygens 1705" loading="lazy"
           style="width:100%; object-fit:cover; height:500px; display:block; object-position:center 60%;">
@@ -580,7 +612,7 @@
 <!-- ESPERIENZE & WELLBEING -->
 <section style="background:var(--sage-dark); padding:6rem 2rem;" id="pedana">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+    <div class="two-col">
       <div style="color:var(--cream);">
         <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Wellbeing &amp; Experiences</p>
         <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; line-height:1.2; margin-bottom:1.4rem;">Tra natura,<br>benessere e connessione</h2>
