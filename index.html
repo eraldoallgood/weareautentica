@@ -124,10 +124,45 @@
     footer .footer-logo { font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold); display: block; margin-bottom: 0.8rem; }
     footer a { color: var(--gold); text-decoration: none; }
 
+    /* SWIPE INDICATOR */
+    .swipe-hint { display: none; }
+    @media (max-width: 768px) {
+      .swipe-hint {
+        display: flex; align-items: center; justify-content: center;
+        gap: 0.5rem; margin-top: 1.2rem;
+        font-family: var(--font-sans); font-size: 0.68rem; letter-spacing: 0.2em;
+        text-transform: uppercase; color: var(--gold); opacity: 0.8;
+        animation: swipePulse 1.8s ease-in-out infinite;
+      }
+      .swipe-hint svg { width: 18px; height: 18px; fill: none; stroke: var(--gold); stroke-width: 1.5; animation: swipeArrow 1.8s ease-in-out infinite; }
+      @keyframes swipePulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+      @keyframes swipeArrow { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       nav ul { display: none; }
-      #esperienze > div:last-child { grid-template-columns: 1fr !important; }
+
+      /* 3-card scroll orizzontale */
+      #esperienze .exp-grid {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1.5rem !important;
+        padding-bottom: 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        scrollbar-width: none;
+      }
+      #esperienze .exp-grid::-webkit-scrollbar { display: none; }
+      #esperienze .exp-grid > a {
+        flex: 0 0 80vw;
+        scroll-snap-align: start;
+      }
+
       .loc-layout { grid-template-columns: 1fr; gap: 2rem; }
       .loc-layout.reverse { direction: ltr; }
       .photo-gallery.g2, .photo-gallery.g3 { grid-template-columns: 1fr; }
@@ -194,7 +229,7 @@
     <h2 class="section-title" style="text-align:center">Per chi è AUTENTICA</h2>
     <div class="divider"></div>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3rem; margin-top:3.5rem;">
+    <div class="exp-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3rem; margin-top:3.5rem;">
 
       <!-- AZIENDE -->
       <a href="#aziende" style="text-decoration:none; display:flex; flex-direction:column; gap:1.4rem;">
@@ -238,6 +273,11 @@
         </div>
       </a>
 
+    </div>
+    <div class="swipe-hint">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      scorri per vedere
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
     </div>
   </div>
 </section>
