@@ -37,7 +37,7 @@
 
     /* HERO */
     .hero { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .hero-bg { position: absolute; inset: 0; background: url('foto_web/IMG_1473.jpg') center/cover no-repeat; transform: scale(1.05); animation: heroZoom 14s ease-out forwards; }
+    .hero-bg { position: absolute; inset: 0; background: url('foto_web/_MG_9728.jpg') center/cover no-repeat; transform: scale(1.05); animation: heroZoom 14s ease-out forwards; }
     @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.0); } }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,20,10,0.2) 0%, rgba(30,20,10,0.52) 100%); }
     .hero-content { position: relative; z-index: 1; text-align: center; color: var(--white); padding: 2rem; animation: fadeUp 1.2s ease 0.3s both; }
@@ -61,10 +61,76 @@
     .section-lead { font-size: 1.05rem; max-width: 640px; margin: 0 auto; color: #5a4030; line-height: 1.9; font-weight: 300; }
     .divider { width: 48px; height: 2px; background: var(--gold); margin: 1.8rem auto; }
 
-    /* GALLERY STRIP */
-    .gallery-strip { padding: 0; overflow-x: auto; display: flex; gap: 6px; background: var(--brown); scrollbar-width: thin; scrollbar-color: var(--gold) var(--brown); }
-    .gallery-strip img { height: 420px; width: auto; flex-shrink: 0; object-fit: cover; display: block; transition: opacity 0.3s; }
-    .gallery-strip img:hover { opacity: 0.82; }
+    /* GALLERY CAROUSEL */
+    .gallery-carousel {
+      padding: 3rem 0;
+      overflow: hidden;
+      position: relative;
+      background: var(--brown);
+    }
+    .gallery-track {
+      display: flex;
+      gap: 20px;
+      padding: 0 2rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+    }
+    .gallery-track::-webkit-scrollbar { display: none; }
+    .gallery-track:active { cursor: grabbing; }
+    .gallery-track img {
+      height: 520px;
+      width: auto;
+      min-width: 340px;
+      max-width: 480px;
+      flex-shrink: 0;
+      object-fit: cover;
+      display: block;
+      scroll-snap-align: start;
+      transition: opacity 0.3s, transform 0.4s;
+    }
+    .gallery-track img:hover { opacity: 0.88; transform: scale(1.01); }
+    /* Alternating heights for rhythm */
+    .gallery-track img:nth-child(odd) { height: 520px; }
+    .gallery-track img:nth-child(even) { height: 460px; align-self: center; }
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 1.8rem 0 0.5rem;
+    }
+    .gallery-dot {
+      width: 32px;
+      height: 3px;
+      background: rgba(245,240,232,0.3);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, width 0.3s;
+      padding: 0;
+    }
+    .gallery-dot.active {
+      background: var(--gold);
+      width: 48px;
+    }
+    .gallery-scroll-hint {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(245,240,232,0.5);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      pointer-events: none;
+      animation: hintFade 3s ease 1s forwards;
+    }
+    @keyframes hintFade { to { opacity: 0; } }
 
     /* STATS */
     .stats-bar { background: var(--sage-dark); padding: 3.5rem 2rem; }
@@ -211,6 +277,10 @@
       .photo-gallery.g2, .photo-gallery.g3 { grid-template-columns: 1fr; }
       .photo-gallery .tall { grid-row: span 1; }
       .photo-gallery img, .photo-gallery .tall img { height: 240px; min-height: unset; }
+
+      .gallery-track img { height: 380px !important; min-width: 280px !important; }
+      .gallery-track img:nth-child(even) { height: 340px !important; }
+      .gallery-scroll-hint { display: none; }
     }
   </style>
 </head>
@@ -255,15 +325,19 @@
 </section>
 
 <!-- GALLERY STRIP 1 -->
-<div class="gallery-strip">
-  <img src="foto_web/IMG_1466.jpg"   alt="Sala ristorante">
-  <img src="foto_web/IMG_0629.jpg"   alt="Cena a lume di candela">
-  <img src="foto_web/IMG_1471.jpg"   alt="Chef in natura">
-  <img src="foto_web/IMG_6580_v.jpg" alt="Tramonto sulla Pedana">
-  <img src="foto_web/IMG_5343.jpg"   alt="Evento serale outdoor">
-  <img src="foto_web/IMG_5341.jpg"   alt="Aperitivo nel verde">
-  <img src="foto_web/IMG_6645.jpg"   alt="Momento al tramonto">
-  <img src="foto_web/IMG_1473.jpg"   alt="Panorama colline livornesi">
+<div class="gallery-carousel">
+  <div class="gallery-track" id="gallery1">
+    <img src="foto_web/IMG_1466.jpg"   alt="Sala ristorante" loading="lazy">
+    <img src="foto_web/IMG_0629.jpg"   alt="Cena a lume di candela" loading="lazy">
+    <img src="foto_web/IMG_1471.jpg"   alt="Chef in natura" loading="lazy">
+    <img src="foto_web/IMG_6580_v.jpg" alt="Tramonto sulla Pedana" loading="lazy">
+    <img src="foto_web/IMG_5343.jpg"   alt="Evento serale outdoor" loading="lazy">
+    <img src="foto_web/IMG_5341.jpg"   alt="Aperitivo nel verde" loading="lazy">
+    <img src="foto_web/IMG_6645.jpg"   alt="Momento al tramonto" loading="lazy">
+    <img src="foto_web/IMG_1473.jpg"   alt="Panorama colline livornesi" loading="lazy">
+  </div>
+  <div class="gallery-dots" id="dots1"></div>
+  <div class="gallery-scroll-hint">scorri <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg></div>
 </div>
 
 <!-- BIFORCAZIONE -->
@@ -565,17 +639,21 @@
 </section>
 
 <!-- GALLERY STRIP 2 -->
-<div class="gallery-strip">
-  <img src="foto_web/IMG_05572.jpg"  alt="Evento">
-  <img src="foto_web/IMG_5343.jpg"   alt="Evento">
-  <img src="foto_web/IMG_6582.jpg"   alt="Tramonto sulla Pedana">
-  <img src="foto_web/IMG_3828.jpg"   alt="Mangiare è un atto agricolo">
-  <img src="foto_web/IMG_06272.jpg"  alt="Evento">
-  <img src="foto_web/IMG_6739.jpg"   alt="Evento">
-  <img src="foto_web/IMG_4630.jpg"   alt="Evento">
-  <img src="foto_web/IMG_0926.jpg"   alt="Evento">
-  <img src="foto_web/IMG_5598.jpg"   alt="Evento">
-  <img src="foto_web/IMG_1342.jpg"   alt="Evento">
+<div class="gallery-carousel">
+  <div class="gallery-track" id="gallery2">
+    <img src="foto_web/IMG_05572.jpg"  alt="Evento" loading="lazy">
+    <img src="foto_web/IMG_5343.jpg"   alt="Evento" loading="lazy">
+    <img src="foto_web/IMG_6582.jpg"   alt="Tramonto sulla Pedana" loading="lazy">
+    <img src="foto_web/IMG_3828.jpg"   alt="Mangiare è un atto agricolo" loading="lazy">
+    <img src="foto_web/IMG_06272.jpg"  alt="Evento" loading="lazy">
+    <img src="foto_web/IMG_6739.jpg"   alt="Evento" loading="lazy">
+    <img src="foto_web/IMG_4630.jpg"   alt="Evento" loading="lazy">
+    <img src="foto_web/IMG_0926.jpg"   alt="Evento" loading="lazy">
+    <img src="foto_web/IMG_5598.jpg"   alt="Evento" loading="lazy">
+    <img src="foto_web/IMG_1342.jpg"   alt="Evento" loading="lazy">
+  </div>
+  <div class="gallery-dots" id="dots2"></div>
+  <div class="gallery-scroll-hint">scorri <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg></div>
 </div>
 
 <!-- ALLA SERRA -->
@@ -745,6 +823,50 @@
     let current = '';
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
     navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
+  });
+
+  // Gallery carousel with dots and drag scroll
+  document.querySelectorAll('.gallery-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.gallery-track');
+    const dotsContainer = carousel.querySelector('.gallery-dots');
+    const images = track.querySelectorAll('img');
+    const groupSize = 4;
+    const totalDots = Math.ceil(images.length / groupSize);
+
+    // Create dots
+    for(let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Vai al gruppo ' + (i+1));
+      dot.addEventListener('click', () => {
+        const target = images[i * groupSize];
+        if(target) track.scrollTo({ left: target.offsetLeft - 32, behavior: 'smooth' });
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    // Update dots on scroll
+    track.addEventListener('scroll', () => {
+      const scrollPos = track.scrollLeft;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const progress = scrollPos / maxScroll;
+      const activeDot = Math.min(Math.round(progress * (totalDots - 1)), totalDots - 1);
+      dotsContainer.querySelectorAll('.gallery-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === activeDot);
+      });
+    });
+
+    // Drag to scroll
+    let isDown = false, startX, scrollLeft;
+    track.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+    track.addEventListener('mouseleave', () => isDown = false);
+    track.addEventListener('mouseup', () => isDown = false);
+    track.addEventListener('mousemove', e => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
   });
 </script>
 </body>
