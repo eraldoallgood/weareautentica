@@ -152,12 +152,13 @@
     .loc-detail:nth-of-type(odd) { background: var(--white); }
     .loc-detail:nth-of-type(even) { background: var(--cream); }
     .loc-detail .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-    .loc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; min-height: 700px; }
+    .loc-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 0; align-items: stretch; min-height: 700px; }
     .loc-layout.reverse { direction: rtl; }
     .loc-layout.reverse > * { direction: ltr; }
     .loc-layout img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .loc-text { display: flex; flex-direction: column; justify-content: center; padding: 4rem 5rem; }
-    .loc-text .tag { display: inline-block; background: var(--sage); color: var(--white); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.25rem 0.7rem; margin-bottom: 1rem; }
+    .loc-text { display: flex; flex-direction: column; justify-content: center; padding: 4rem 4rem 4rem 5rem; }
+    .loc-text .btn { align-self: center; font-size: 0.72rem; letter-spacing: 0.18em; padding: 0.7rem 2rem; }
+    .loc-text .tag { display: inline-block; background: none; color: var(--gold); font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; padding: 0; margin-bottom: 1.2rem; font-family: var(--font-sans); font-weight: 300; }
     .loc-text h2 { font-family: var(--font-serif); font-size: clamp(2rem,3.5vw,2.8rem); font-weight: 400; color: var(--brown); margin-bottom: 1rem; line-height: 1.2; letter-spacing: 0.01em; }
     .loc-text p { color: #5a4030; line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
     .loc-text .specs { margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
@@ -277,8 +278,9 @@
 
       .loc-layout { grid-template-columns: 1fr; gap: 0; min-height: auto; }
       .loc-layout.reverse { direction: ltr; }
-      .loc-layout img { height: 400px; }
+      .loc-layout img { height: 380px; }
       .loc-text { padding: 2.5rem 1.5rem; }
+      .loc-text .btn { align-self: center; }
       .photo-gallery.g2, .photo-gallery.g3 { grid-template-columns: 1fr; }
       .photo-gallery .tall { grid-row: span 1; }
       .photo-gallery img, .photo-gallery .tall img { height: 240px; min-height: unset; }
