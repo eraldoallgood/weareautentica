@@ -148,12 +148,15 @@
     .card-label p { font-size: 0.8rem; opacity: 0.8; letter-spacing: 0.06em; }
 
     /* LOCATION DETAIL */
-    .loc-detail { padding: 8rem 2rem; }
+    .loc-detail { padding: 0; overflow: hidden; }
     .loc-detail:nth-of-type(odd) { background: var(--white); }
     .loc-detail:nth-of-type(even) { background: var(--cream); }
-    .loc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .loc-detail > .container { max-width: 100%; padding: 0; }
+    .loc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; min-height: 700px; }
     .loc-layout.reverse { direction: rtl; }
     .loc-layout.reverse > * { direction: ltr; }
+    .loc-layout img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .loc-text { display: flex; flex-direction: column; justify-content: center; padding: 4rem 5rem; }
     .loc-text .tag { display: inline-block; background: var(--sage); color: var(--white); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.25rem 0.7rem; margin-bottom: 1rem; }
     .loc-text h2 { font-family: var(--font-serif); font-size: clamp(2rem,3.5vw,2.8rem); font-weight: 400; color: var(--brown); margin-bottom: 1rem; line-height: 1.2; letter-spacing: 0.01em; }
     .loc-text p { color: #5a4030; line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
@@ -272,8 +275,10 @@
       .loc-grid { grid-template-columns: 1fr !important; gap: 0.4rem !important; }
       .loc-card img { height: 260px !important; }
 
-      .loc-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .loc-layout { grid-template-columns: 1fr; gap: 0; min-height: auto; }
       .loc-layout.reverse { direction: ltr; }
+      .loc-layout img { height: 400px; }
+      .loc-text { padding: 2.5rem 1.5rem; }
       .photo-gallery.g2, .photo-gallery.g3 { grid-template-columns: 1fr; }
       .photo-gallery .tall { grid-row: span 1; }
       .photo-gallery img, .photo-gallery .tall img { height: 240px; min-height: unset; }
@@ -691,7 +696,7 @@
       </div>
       <div>
         <img src="foto_web/Screenshot_2026-04-02.jpg" alt="Alla Serra Bar Agricolo" loading="lazy"
-          style="width:100%; height:700px; object-fit:cover; display:block; object-position:center center;">
+          style="object-position:center center;">
       </div>
     </div>
   </div>
@@ -709,7 +714,7 @@
       </div>
       <div>
         <img src="foto_web/dentroserra.JPG" alt="Dentro la Serra - torri aeroponiche" loading="lazy"
-          style="width:100%; height:700px; object-fit:cover; display:block; object-position:center center;">
+          style="object-position:center center;">
       </div>
     </div>
   </div>
@@ -751,7 +756,7 @@
       </div>
       <div>
         <img src="foto_web/Screenshot_2026-04-021.jpg" alt="La Pedana" loading="lazy"
-          style="width:100%; height:700px; object-fit:cover; display:block; object-position:center top;">
+          style="object-position:center top;">
       </div>
     </div>
   </div>
