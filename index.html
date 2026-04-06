@@ -148,10 +148,10 @@
     .card-label p { font-size: 0.8rem; opacity: 0.8; letter-spacing: 0.06em; }
 
     /* LOCATION DETAIL */
-    .loc-detail { padding: 0; overflow: hidden; }
+    .loc-detail { padding: 0 !important; overflow: hidden; }
     .loc-detail:nth-of-type(odd) { background: var(--white); }
     .loc-detail:nth-of-type(even) { background: var(--cream); }
-    .loc-detail > .container { max-width: 100%; padding: 0; }
+    .loc-detail .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
     .loc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; min-height: 700px; }
     .loc-layout.reverse { direction: rtl; }
     .loc-layout.reverse > * { direction: ltr; }
