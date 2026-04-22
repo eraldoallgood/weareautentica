@@ -799,12 +799,23 @@
     <p class="section-lead" style="text-align:center; font-family:'Georgia',serif; font-style:italic; font-size:1.15rem; color:var(--brown);">Ogni evento inizia da una conversazione.</p>
     <p class="section-lead" style="text-align:center; margin-top:0.8rem;">Non siamo un portale di prenotazioni — siamo persone in carne e ossa che rispondono entro 24 ore con una proposta su misura.</p>
     <form class="contact-form" onsubmit="handleSubmit(event)">
+      <select name="tipo_evento" required>
+        <option value="" disabled selected>Tipo di evento…</option>
+        <option>Cena / Aperitivo</option>
+        <option>Compleanno</option>
+        <option>Compleanno per bambini</option>
+        <option>Anniversario o ricorrenza</option>
+        <option>Matrimonio</option>
+        <option>Evento aziendale / Meeting</option>
+        <option>Retreat o seminario (porto il mio gruppo)</option>
+        <option>Altro / Più cose insieme</option>
+      </select>
       <div class="row">
-        <input type="text" placeholder="Nome e Cognome" required>
-        <input type="email" placeholder="Email" required>
+        <input type="text" name="nome" placeholder="Nome e Cognome" required>
+        <input type="email" name="email" placeholder="Email" required>
       </div>
-      <input type="tel" placeholder="Telefono (opzionale)">
-      <select required>
+      <input type="tel" name="telefono" placeholder="Telefono" required>
+      <select name="location">
         <option value="" disabled selected>Scegli la location…</option>
         <option>Sala Riunioni — Villa Sambuca</option>
         <option>RistorOrto Farm to Table — Villa Sambuca</option>
@@ -814,10 +825,14 @@
         <option>Più location / Da definire</option>
       </select>
       <div class="row">
-        <input type="date" placeholder="Data evento">
-        <input type="number" placeholder="N° ospiti previsti" min="1">
+        <input type="date" name="data_evento" placeholder="Data dell'evento" required>
+        <input type="number" name="num_ospiti" placeholder="N° ospiti previsti" min="1" required>
       </div>
-      <textarea placeholder="Descrivi il tuo evento: tipo di occasione, esigenze particolari, catering…"></textarea>
+      <div class="row">
+        <label><input type="radio" name="data_flessibilita" value="fissa" required> Data fissa</label>
+        <label><input type="radio" name="data_flessibilita" value="flessibile" checked> Data flessibile</label>
+      </div>
+      <textarea name="messaggio" placeholder="Descrivi il tuo evento: tipo di occasione, esigenze particolari, catering…" required></textarea>
       <button type="submit" class="btn btn-solid" style="padding:1rem; font-size:0.88rem; cursor:pointer; border:none; letter-spacing:0.16em">PARLACI DEL TUO EVENTO</button>
     </form>
   </div>
@@ -833,12 +848,47 @@
 </footer>
 
 <script>
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type=submit]');
-    btn.textContent = '✓ RICHIESTA INVIATA';
-    btn.style.background = 'var(--sage-dark)';
-    setTimeout(() => { btn.textContent = 'PARLACI DEL TUO EVENTO'; btn.style.background = ''; e.target.reset(); }, 3000);
+    const form = e.target;
+    const btn = form.querySelector('button[type=submit]');
+    btn.textContent = 'INVIO IN CORSO…';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xreryoka', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if (res.ok) {
+        btn.textContent = '✓ RICHIESTA INVIATA';
+        btn.style.background = 'var(--sage-dark)';
+        btn.style.borderColor = 'var(--sage-dark)';
+        btn.style.color = '#fff';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = 'PARLACI DEL TUO EVENTO';
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error('server error');
+      }
+    } catch {
+      btn.textContent = 'ERRORE — RIPROVA';
+      btn.style.background = '#a03030';
+      btn.style.borderColor = '#a03030';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.textContent = 'PARLACI DEL TUO EVENTO';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 4000);
+    }
   }
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav ul a');
