@@ -1,2 +1,8 @@
+# macOS system files
 .DS_Store
-foto_web/.DS_Store
+
+# Foto originali non usate
+foto_web/Foto Evento Friki/
+foto_web/54 - FrikiSerra-big-event-crowd.jpg
+foto_web/IMG_*.jpeg
+foto_web/IMG_*.jpg
