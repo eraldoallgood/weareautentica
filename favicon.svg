@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Autentica</title>
+  <rect width="512" height="512" fill="#453326"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#C9A14E" stroke-width="7"/>
+  <path d="M 168 366 L 256 148 L 344 366" fill="none" stroke="#C9A14E" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter"/>
+</svg>
