@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
   <meta name="description" content="AUTENTICA — Eventi privati e aziendali, matrimoni e incontri immersivi tra natura e design nella Valle Benedetta, Livorno.">
+  <link rel="alternate" hreflang="it"        href="https://autentica.vallebenedetta.org/" />
+  <link rel="alternate" hreflang="en"        href="https://autentica.vallebenedetta.org/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://autentica.vallebenedetta.org/" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -34,6 +37,16 @@
     nav ul { list-style: none; display: flex; gap: 1.8rem; }
     nav ul a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.75; font-weight: 300; transition: opacity 0.2s; }
     nav ul a:hover { opacity: 1; color: var(--gold); }
+
+    /* LANG SWITCHER */
+    .lang-switcher { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.2em; }
+    .lang-switcher a { color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s; font-weight: 300; }
+    .lang-switcher a:hover { color: var(--cream); }
+    .lang-switcher a.active { color: var(--gold); }
+    .lang-switcher span { color: rgba(245,240,232,0.25); font-size: 0.6rem; }
+    @media (max-width: 768px) {
+      .lang-switcher { font-size: 0.68rem; }
+    }
 
     /* HERO */
     .hero { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -305,6 +318,11 @@
     <li><a href="#locations">Le Location</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
+  <div class="lang-switcher">
+    <a href="/" hreflang="it" class="active">IT</a>
+    <span>·</span>
+    <a href="/en/" hreflang="en">EN</a>
+  </div>
 </nav>
 
 <!-- HERO -->

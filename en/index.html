@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTENTICA · Tuscany Weddings &amp; Private Events · Valle Benedetta, Livorno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- SEO -->
+  <meta name="description" content="Tuscany wedding venue near Livorno. Intimate destination weddings, private events, and farm-to-table dining at Valle Benedetta organic estate.">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="it"        href="https://autentica.vallebenedetta.org/" />
+  <link rel="alternate" hreflang="en"        href="https://autentica.vallebenedetta.org/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://autentica.vallebenedetta.org/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:url"         content="https://autentica.vallebenedetta.org/en/" />
+  <meta property="og:site_name"   content="AUTENTICA" />
+  <meta property="og:title"       content="AUTENTICA · Tuscany Weddings &amp; Private Events · Valle Benedetta, Livorno" />
+  <meta property="og:description" content="Tuscany wedding venue near Livorno. Intimate destination weddings, private events, and farm-to-table dining at Valle Benedetta organic estate." />
+  <meta property="og:image"       content="https://autentica.vallebenedetta.org/foto_web/matrimoni-celebrazione-bucolica.jpg" />
+  <meta property="og:image:alt"   content="Wedding celebration at Villa Sambuca, Valle Benedetta, Livorno" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:     #f5f0e8;
+      --sage:      #7a8c6e;
+      --sage-dark: #4e5e44;
+      --terra:     #b06d45;
+      --brown:     #3e2c1e;
+      --gold:      #c9a24a;
+      --white:     #ffffff;
+      --font-serif: 'DM Serif Display', 'Georgia', serif;
+      --font-sans:  'Jost', 'Helvetica Neue', Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--cream); color: var(--brown); line-height: 1.6; font-weight: 300; background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(62,44,30,0.92); backdrop-filter: blur(8px);
+      padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    nav .logo { font-family: 'Jost', sans-serif; color: var(--gold); font-size: 0.95rem; letter-spacing: 0.42em; text-decoration: none; font-weight: 300; text-transform: uppercase; }
+    nav ul { list-style: none; display: flex; gap: 1.8rem; }
+    nav ul a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.75; font-weight: 300; transition: opacity 0.2s; }
+    nav ul a:hover { opacity: 1; color: var(--gold); }
+
+    /* HERO */
+    .hero { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    /* NOTE: root-relative path — works from /en/ */
+    .hero-bg { position: absolute; inset: 0; background: url('/foto_web/9728.jpg') center/cover no-repeat; transform: scale(1.05); animation: heroZoom 14s ease-out forwards; }
+    @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.0); } }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,20,10,0.2) 0%, rgba(30,20,10,0.52) 100%); }
+    .hero-content { position: relative; z-index: 1; text-align: center; color: var(--white); padding: 2rem; animation: fadeUp 1.2s ease 0.3s both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 300; }
+    .hero-title { font-family: var(--font-serif); font-size: clamp(2.6rem,6vw,4.5rem); font-weight: 400; letter-spacing: 0.02em; line-height: 1.15; margin-bottom: 1.2rem; }
+    .hero-sub { font-size: clamp(1rem,2vw,1.2rem); opacity: 0.9; max-width: 580px; margin: 0 auto 2.2rem; line-height: 1.7; }
+    .btn { display: inline-block; padding: 0.9rem 2.6rem; border: 1px solid var(--gold); color: var(--white); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; transition: background 0.25s, color 0.25s; font-weight: 300; }
+    .btn:hover { background: var(--gold); color: var(--brown); }
+    .btn-solid { background: transparent; border-color: var(--brown); color: var(--brown); letter-spacing: 0.16em; }
+    .btn-solid:hover { background: var(--brown); border-color: var(--brown); color: var(--white); }
+    .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; color: rgba(255,255,255,0.6); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .hero-scroll::after { content: ''; display: block; width: 1px; height: 40px; background: rgba(255,255,255,0.4); animation: scrollLine 1.6s ease-in-out infinite; }
+    @keyframes scrollLine { 0%,100% { opacity: 0.3; height: 20px; } 50% { opacity: 0.9; height: 40px; } }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.68rem; letter-spacing: 0.36em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.8rem; font-weight: 300; }
+    .section-title { font-family: var(--font-serif); font-size: clamp(2rem,4.5vw,3.2rem); font-weight: 400; letter-spacing: 0.01em; color: var(--brown); margin-bottom: 1.4rem; }
+    .section-lead { font-size: 1.05rem; max-width: 640px; margin: 0 auto; color: #5a4030; line-height: 1.9; font-weight: 300; }
+    .divider { width: 48px; height: 2px; background: var(--gold); margin: 1.8rem auto; }
+
+    /* GALLERY CAROUSEL */
+    .gallery-carousel {
+      padding: 3rem 0;
+      overflow: hidden;
+      position: relative;
+      background: var(--brown);
+    }
+    .gallery-track {
+      display: flex;
+      gap: 20px;
+      padding: 0 2rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+    }
+    .gallery-track::-webkit-scrollbar { display: none; }
+    .gallery-track:active { cursor: grabbing; }
+    .gallery-track img {
+      height: 520px;
+      width: auto;
+      min-width: 340px;
+      max-width: 480px;
+      flex-shrink: 0;
+      object-fit: cover;
+      display: block;
+      scroll-snap-align: start;
+      transition: opacity 0.3s, transform 0.4s;
+    }
+    .gallery-track img:hover { opacity: 0.88; transform: scale(1.01); }
+    .gallery-track img:nth-child(odd) { height: 520px; }
+    .gallery-track img:nth-child(even) { height: 460px; align-self: center; }
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 1.8rem 0 0.5rem;
+    }
+    .gallery-dot {
+      width: 32px;
+      height: 3px;
+      background: rgba(245,240,232,0.3);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, width 0.3s;
+      padding: 0;
+    }
+    .gallery-dot.active {
+      background: var(--gold);
+      width: 48px;
+    }
+    .gallery-scroll-hint {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(245,240,232,0.5);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      pointer-events: none;
+      animation: hintFade 3s ease 1s forwards;
+    }
+    @keyframes hintFade { to { opacity: 0; } }
+
+    /* STATS */
+    .stats-bar { background: var(--sage-dark); padding: 3.5rem 2rem; }
+    .stats-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center; }
+    .stat-item .num { font-family: var(--font-serif); font-size: 2.6rem; color: var(--gold); display: block; font-weight: 400; }
+    .stat-item .label { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,240,232,0.75); }
+
+    /* LOCATION CARDS */
+    .loc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 3rem; }
+    .loc-card { position: relative; overflow: hidden; cursor: pointer; }
+    .loc-card img { width: 100%; height: 900px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .loc-card:hover img { transform: scale(1.04); }
+    .loc-card .card-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(30,20,10,0.82) 0%, transparent 100%); padding: 2rem 1.4rem 1.2rem; color: var(--white); }
+    .card-label h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.2rem; letter-spacing: 0.02em; }
+    .card-label p { font-size: 0.8rem; opacity: 0.8; letter-spacing: 0.06em; }
+
+    /* LOCATION DETAIL */
+    .loc-detail { padding: 0 !important; overflow: hidden; }
+    .loc-detail:nth-of-type(odd) { background: var(--white); }
+    .loc-detail:nth-of-type(even) { background: var(--cream); }
+    .loc-detail .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    .loc-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 0; align-items: stretch; min-height: 700px; }
+    .loc-layout.reverse { direction: rtl; }
+    .loc-layout.reverse > * { direction: ltr; }
+    .loc-layout > div:not(.loc-text) { overflow: hidden; }
+    .loc-layout img { width: calc(100% - 7.7rem); height: 100%; object-fit: cover; display: block; float: left; }
+    .loc-layout.reverse img { float: right; }
+    .loc-text { display: flex; flex-direction: column; justify-content: center; padding: 4rem 4rem 4rem 5rem; align-items: flex-start; }
+    .loc-text .btn { align-self: center; font-size: 0.68rem; letter-spacing: 0.16em; padding: 0.55rem 1.6rem; margin-top: 0.5rem; }
+    .loc-text .tag { display: inline-block; background: none !important; color: var(--gold); font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; padding: 0 !important; margin-bottom: 1.2rem; font-family: var(--font-sans); font-weight: 300; border: none !important; }
+    .loc-text h2 { font-family: var(--font-serif); font-size: clamp(2rem,3.5vw,2.8rem); font-weight: 400; color: var(--brown); margin-bottom: 1rem; line-height: 1.2; letter-spacing: 0.01em; }
+    .loc-text p { color: #5a4030; line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
+    .loc-text .specs { margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .spec-pill { background: rgba(122,140,110,0.12); border: 1px solid rgba(122,140,110,0.3); color: var(--sage-dark); font-size: 0.78rem; padding: 0.3rem 0.9rem; border-radius: 20px; letter-spacing: 0.04em; }
+
+    /* PHOTO GRID */
+    .photo-gallery { display: grid; gap: 6px; }
+    .photo-gallery.g2 { grid-template-columns: 1fr 1fr; }
+    .photo-gallery.g3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+    .photo-gallery img { width: 100%; height: 260px; object-fit: cover; display: block; transition: opacity 0.3s; }
+    .photo-gallery img:hover { opacity: 0.88; }
+    #esperienze a:hover img { transform: scale(1.03); }
+    #esperienze a:hover span { border-color: var(--gold); color: var(--gold); }
+    .photo-gallery .tall { grid-row: span 2; }
+    .photo-gallery .tall img { height: 100%; min-height: 526px; }
+
+    /* QUOTE */
+    .quote-section { background: var(--brown); text-align: center; padding: 6rem 2rem; }
+    .quote-section blockquote { font-family: var(--font-serif); font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 400; font-style: italic; color: var(--cream); max-width: 760px; margin: 0 auto 1.4rem; line-height: 1.6; letter-spacing: 0.01em; }
+    .quote-section cite { color: var(--gold); font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; font-style: normal; }
+
+    /* CONTACT */
+    .contact-form { max-width: 560px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 0.9rem 1.2rem; border: 1px solid rgba(62,44,30,0.2); background: var(--white); font-family: var(--font-sans); font-size: 0.95rem; color: var(--brown); outline: none; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--sage); }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form .row { display: flex; gap: 1rem; }
+    .contact-form .row > * { flex: 1; }
+
+    /* FOOTER */
+    footer { background: var(--brown); color: rgba(245,240,232,0.65); text-align: center; padding: 3rem 2rem; font-size: 0.82rem; letter-spacing: 0.06em; }
+    footer .footer-logo { font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold); display: block; margin-bottom: 0.8rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* LANG SWITCHER */
+    .lang-switcher { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.2em; }
+    .lang-switcher a { color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s; font-weight: 300; }
+    .lang-switcher a:hover { color: var(--cream); }
+    .lang-switcher a.active { color: var(--gold); }
+    .lang-switcher span { color: rgba(245,240,232,0.25); font-size: 0.6rem; }
+    @media (max-width: 768px) {
+      .lang-switcher { font-size: 0.68rem; }
+    }
+
+    /* SWIPE INDICATOR */
+    .swipe-hint { display: none; }
+    @media (max-width: 768px) {
+      .swipe-hint {
+        display: flex; align-items: center; justify-content: center;
+        gap: 0.5rem; margin-top: 1.2rem;
+        font-family: var(--font-sans); font-size: 0.68rem; letter-spacing: 0.2em;
+        text-transform: uppercase; color: var(--gold); opacity: 0.8;
+        animation: swipePulse 1.8s ease-in-out infinite;
+      }
+      .swipe-hint svg { width: 18px; height: 18px; fill: none; stroke: var(--gold); stroke-width: 1.5; animation: swipeArrow 1.8s ease-in-out infinite; }
+      @keyframes swipePulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+      @keyframes swipeArrow { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+    }
+
+    /* TWO-COL GRID */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      section { padding: 3.5rem 1.4rem !important; }
+      .two-col {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.8rem !important;
+      }
+      .two-col > div:first-child { order: 2; }
+      .two-col > div:last-child { order: 1; }
+      .two-col > div:first-child img ~ * { display: block; }
+      .two-col img {
+        width: 100% !important;
+        height: 280px !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+      #matrimoni .two-col > div:first-child,
+      #villa-huygens .two-col > div:first-child { order: 1; }
+      #matrimoni .two-col > div:last-child,
+      #villa-huygens .two-col > div:last-child { order: 2; }
+      #esperienze .exp-grid {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1.5rem !important;
+        padding-bottom: 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        scrollbar-width: none;
+      }
+      #esperienze .exp-grid::-webkit-scrollbar { display: none; }
+      #esperienze .exp-grid > a {
+        flex: 0 0 80vw;
+        scroll-snap-align: start;
+      }
+      .testimonial-layout {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center;
+      }
+      .testimonial-photo {
+        max-width: 160px !important;
+        margin: 0 auto !important;
+      }
+      .loc-grid { grid-template-columns: 1fr !important; gap: 0.4rem !important; }
+      .loc-card img { height: 260px !important; }
+      .loc-layout { grid-template-columns: 1fr; gap: 0; min-height: auto; }
+      .loc-layout.reverse { direction: ltr; }
+      .loc-layout img { height: 380px; }
+      .loc-text { padding: 2.5rem 1.5rem; }
+      .loc-text .btn { align-self: center; }
+      .photo-gallery.g2, .photo-gallery.g3 { grid-template-columns: 1fr; }
+      .photo-gallery .tall { grid-row: span 1; }
+      .photo-gallery img, .photo-gallery .tall img { height: 240px; min-height: unset; }
+      .gallery-track img { height: 380px !important; min-width: 280px !important; }
+      .gallery-track img:nth-child(even) { height: 340px !important; }
+      .gallery-scroll-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/en/" class="logo" style="font-size:1.3rem;letter-spacing:0.22em;font-weight:normal;">AUTENTICA</a>
+  <ul>
+    <li><a href="#tuscany-weddings">Tuscany Weddings</a></li>
+    <li><a href="#celebrations">Private Events</a></li>
+    <li><a href="#the-estate">The Estate</a></li>
+    <li><a href="#wellbeing">Wellbeing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <a href="/" hreflang="it">IT</a>
+    <span>·</span>
+    <a href="/en/" hreflang="en" class="active">EN</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Your guests will remember<br>how you made them feel.</h1>
+    <p style="font-family:var(--font-serif); font-style:italic; font-size:clamp(1.1rem, 1.8vw, 1.5rem); color:var(--white); text-align:center; margin-top:1.5rem; margin-bottom:2.5rem;">We craft immersive events among nature, design, and food.</p>
+    <a href="#contact" class="btn">Tell us about your event</a>
+  </div>
+  <div class="hero-scroll">Explore</div>
+</section>
+
+<!-- INTRO -->
+<section style="background:#fff;" id="intro">
+  <div class="container">
+    <p class="section-eyebrow" style="text-align:center">Valle Benedetta, Livorno</p>
+    <h2 class="section-title" style="text-align:center">Ten minutes from the city.<br>A world away.</h2>
+    <div class="divider"></div>
+    <p class="section-lead" style="text-align:center">
+      Valle Benedetta is a living estate — food rises from the soil, spaces breathe, care shows in every detail.<br><br>When you bring people here, something shifts. They stop thinking about where they are and start being fully present.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY STRIP 1 -->
+<div class="gallery-carousel">
+  <div class="gallery-track" id="gallery1">
+    <img src="/foto_web/IMG_1466.jpg"   alt="Restaurant dining room" loading="lazy">
+    <img src="/foto_web/IMG_0629.jpg"   alt="Candlelit dinner" loading="lazy">
+    <img src="/foto_web/IMG_1471.jpg"   alt="Chef in the garden" loading="lazy">
+    <img src="/foto_web/IMG_6580_v.jpg" alt="Sunset at La Pedana" loading="lazy">
+    <img src="/foto_web/IMG_5343.jpg"   alt="Outdoor evening event" loading="lazy">
+    <img src="/foto_web/IMG_5341.jpg"   alt="Aperitivo in the gardens" loading="lazy">
+    <img src="/foto_web/IMG_6645.jpg"   alt="Sunset moment" loading="lazy">
+    <img src="/foto_web/IMG_1473.jpg"   alt="Livorno hills panorama" loading="lazy">
+  </div>
+  <div class="gallery-dots" id="dots1"></div>
+  <div class="gallery-scroll-hint">scroll <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+</div>
+
+<!-- FOR WHOM -->
+<section style="background:var(--white); padding:5rem 2rem;" id="for-whom">
+  <div class="container">
+    <p class="section-eyebrow" style="text-align:center">Who AUTENTICA is for</p>
+    <h2 class="section-title" style="text-align:center">Three ways to gather here</h2>
+    <div class="divider"></div>
+
+    <div class="exp-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem; margin-top:3.5rem;">
+
+      <!-- CARD 1 — Tuscany Weddings -->
+      <a href="#tuscany-weddings" style="text-decoration:none; display:flex; flex-direction:column; gap:1.4rem;">
+        <div style="overflow:hidden;">
+          <img src="/foto_web/matrimoni-celebrazione-bucolica.jpg" alt="Wedding celebration at Valle Benedetta, Tuscany"
+            style="width:100%; height:505px; object-fit:cover; display:block; object-position:center; transition:transform 0.6s ease;">
+        </div>
+        <div>
+          <p style="font-size:0.62rem; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; font-family:'Jost',sans-serif; font-weight:300;">Weddings</p>
+          <h3 style="font-family:'DM Serif Display',serif; font-size:1.65rem; font-weight:400; color:var(--brown); margin-bottom:0.7rem; line-height:1.25;">The day your guests<br>will never forget.</h3>
+          <p style="font-size:0.88rem; color:#5a4030; line-height:1.75; font-weight:300; font-family:'Jost',sans-serif; margin-bottom:1.2rem;">Intimate destination weddings in the Tuscan countryside, near Livorno.</p>
+          <span style="font-size:0.62rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--brown); font-family:'Jost',sans-serif; font-weight:300; border-bottom:1px solid var(--brown); padding-bottom:2px;">Explore →</span>
+        </div>
+      </a>
+
+      <!-- CARD 2 — Private Events -->
+      <a href="#celebrations" style="text-decoration:none; display:flex; flex-direction:column; gap:1.4rem;">
+        <div style="overflow:hidden;">
+          <img src="/foto_web/festa-adulti-atmosfera-sera.jpg" alt="Private celebration at Valle Benedetta"
+            style="width:100%; height:505px; object-fit:cover; display:block; object-position:center 20%; transition:transform 0.6s ease;">
+        </div>
+        <div>
+          <p style="font-size:0.62rem; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; font-family:'Jost',sans-serif; font-weight:300;">Private Events</p>
+          <h3 style="font-family:'DM Serif Display',serif; font-size:1.65rem; font-weight:400; color:var(--brown); margin-bottom:0.7rem; line-height:1.25;">Where people relax<br>and the celebration unfolds.</h3>
+          <p style="font-size:0.88rem; color:#5a4030; line-height:1.75; font-weight:300; font-family:'Jost',sans-serif; margin-bottom:1.2rem;">Anniversaries, milestone birthdays, family reunions.</p>
+          <span style="font-size:0.62rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--brown); font-family:'Jost',sans-serif; font-weight:300; border-bottom:1px solid var(--brown); padding-bottom:2px;">Explore →</span>
+        </div>
+      </a>
+
+      <!-- CARD 3 — Corporate -->
+      <a href="#corporate" style="text-decoration:none; display:flex; flex-direction:column; gap:1.4rem;">
+        <div style="overflow:hidden;">
+          <img src="/foto_web/villa-sambuca-esterno-01.jpg" alt="Villa Sambuca exterior, Valle Benedetta"
+            style="width:100%; height:505px; object-fit:cover; display:block; object-position:center; transition:transform 0.6s ease;">
+        </div>
+        <div>
+          <p style="font-size:0.62rem; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; font-family:'Jost',sans-serif; font-weight:300;">Corporate Retreats</p>
+          <h3 style="font-family:'DM Serif Display',serif; font-size:1.65rem; font-weight:400; color:var(--brown); margin-bottom:0.7rem; line-height:1.25;">Your team needs<br>to leave the office.</h3>
+          <p style="font-size:0.88rem; color:#5a4030; line-height:1.75; font-weight:300; font-family:'Jost',sans-serif; margin-bottom:1.2rem;">Strengthen bonds, build teams — in a place that truly inspires.</p>
+          <span style="font-size:0.62rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--brown); font-family:'Jost',sans-serif; font-weight:300; border-bottom:1px solid var(--brown); padding-bottom:2px;">Explore →</span>
+        </div>
+      </a>
+
+    </div>
+    <div class="swipe-hint">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      swipe to see more
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY AUTENTICA -->
+<section style="background:var(--cream);">
+  <div class="container">
+    <p class="section-eyebrow" style="text-align:center">The difference you feel</p>
+    <h2 class="section-title" style="text-align:center">Why choose<br>AUTENTICA</h2>
+    <div class="divider"></div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:3rem; margin-top:3.5rem; text-align:center;">
+
+      <div>
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem;">
+          <path d="M19 34 C19 34 6 26 6 14 C6 8 12 4 19 4 C26 4 32 8 32 14 C32 26 19 34 19 34Z" stroke="#7a8c6e" stroke-width="1.2" fill="none"/>
+          <line x1="19" y1="34" x2="19" y2="14" stroke="#7a8c6e" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="19" y1="20" x2="26" y2="15" stroke="#7a8c6e" stroke-width="1"/>
+          <line x1="19" y1="26" x2="13" y2="21" stroke="#7a8c6e" stroke-width="1"/>
+        </svg>
+        <h3 style="font-family:var(--font-serif); font-weight:normal; font-size:1.3rem; color:var(--brown); margin-bottom:0.8rem;">Place changes everything</h3>
+        <p style="color:#5a4030; font-size:0.95rem; line-height:1.8;">The green hills, the silence, the light of the Livorno countryside aren't a backdrop — they're part of the experience. Every guest feels it the moment they arrive. It happens every time, without exception.</p>
+      </div>
+
+      <div>
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem;">
+          <circle cx="19" cy="19" r="13" stroke="#7a8c6e" stroke-width="1.2" stroke-dasharray="3 2"/>
+          <circle cx="19" cy="19" r="3" fill="#c9a24a"/>
+          <line x1="19" y1="6" x2="19" y2="4" stroke="#7a8c6e" stroke-width="1.2"/>
+          <line x1="19" y1="34" x2="19" y2="32" stroke="#7a8c6e" stroke-width="1.2"/>
+          <line x1="6" y1="19" x2="4" y2="19" stroke="#7a8c6e" stroke-width="1.2"/>
+          <line x1="34" y1="19" x2="32" y2="19" stroke="#7a8c6e" stroke-width="1.2"/>
+        </svg>
+        <h3 style="font-family:var(--font-serif); font-weight:normal; font-size:1.3rem; color:var(--brown); margin-bottom:0.8rem;">Food born here</h3>
+        <p style="color:#5a4030; font-size:0.95rem; line-height:1.8;">We grow with regenerative methods — living soil, the shortest supply chain, produce that travels from earth to table. Chef Simone Cipriani transforms this into gastronomic experiences that linger.</p>
+      </div>
+
+      <div>
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem;">
+          <path d="M8 22 C8 22 10 18 13 16 L13 10 C13 9 14 8 15 9 L15 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M15 12 C15 11 16 10 17 11 L17 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M17 13 C17 12 18 11 19 12 L19 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M19 14 C19 13 20 12 21 13 L21 20 C21 24 17 28 13 29 L8 29" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M30 22 C30 22 28 18 25 16 L25 10 C25 9 24 8 23 9 L23 16" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M23 12 C23 11 22 10 21 11" stroke="#7a8c6e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <h3 style="font-family:var(--font-serif); font-weight:normal; font-size:1.3rem; color:var(--brown); margin-bottom:0.8rem;">Care you can feel</h3>
+        <p style="color:#5a4030; font-size:0.95rem; line-height:1.8;">We don't manage events. We cultivate food, relationships, and presence — with the same devotion we bring to our land. You'll always have us in front of you.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TUSCANY WEDDINGS -->
+<section style="background:var(--cream); padding:6rem 2rem;" id="tuscany-weddings">
+  <div class="container">
+    <div style="text-align:center; max-width:760px; margin:0 auto 5rem;">
+      <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--terra); margin-bottom:0.8rem;">Tuscany Weddings</p>
+      <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; color:var(--brown); line-height:1.2; margin-bottom:1.4rem;">A few weddings,<br>chosen with care.</h2>
+      <p style="color:#5a4030; line-height:1.9; font-size:0.97rem;">We don't host many weddings. We do a few each year, by choice — because a wedding here isn't a standard package, it's a day built piece by piece, together with you.</p>
+    </div>
+
+    <!-- Where it all happens -->
+    <div class="two-col" style="margin-bottom:5rem;">
+      <div>
+        <img src="/foto_web/matrimoni-celebrazione-bucolica.jpg" alt="Wedding celebration at Villa Sambuca, Valle Benedetta Livorno" loading="lazy"
+          style="width:100%; object-fit:cover; object-position:center center; height:540px; display:block;">
+      </div>
+      <div style="color:#5a4030; display:flex; flex-direction:column; justify-content:center;">
+        <h3 style="font-family:var(--font-serif); font-size:clamp(1.6rem,2.8vw,2.2rem); font-weight:normal; color:var(--gold); margin-bottom:1.4rem; line-height:1.2;">Where it all happens</h3>
+        <p style="line-height:1.9; margin-bottom:1.2rem; font-size:0.97rem;">Villa Sambuca offers outdoor spaces for civil ceremonies, receptions for 60–80 guests, and rooms for those traveling from afar. For larger weddings, we work with partner estates across the valley.</p>
+        <p style="line-height:1.9; margin-bottom:0; font-size:0.97rem;"><strong style="color:var(--gold);">Coming in 2027: Villa Huygens, 1705.</strong> A historic estate with private chapel — our dedicated space for more structured weddings. If you're planning for 2027 and beyond, let's talk now.</p>
+      </div>
+    </div>
+
+    <!-- What you need to know -->
+    <div style="margin-bottom:5rem; padding:3rem; background:var(--white);">
+      <h3 style="font-family:var(--font-serif); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:normal; color:var(--brown); margin-bottom:2rem; text-align:center;">What you need to know</h3>
+      <ul style="list-style:none; max-width:700px; margin:0 auto; display:flex; flex-direction:column; gap:0;">
+        <li style="display:flex; gap:1rem; font-size:0.97rem; color:#5a4030; line-height:1.7; padding:0.85rem 0; border-bottom:1px solid rgba(90,64,48,0.1);">
+          <span style="color:var(--gold); flex-shrink:0; padding-top:0.2rem;">→</span>
+          <span><strong style="color:var(--brown);">Capacity</strong> — 60–80 seated, up to 120 for cocktail receptions</span>
+        </li>
+        <li style="display:flex; gap:1rem; font-size:0.97rem; color:#5a4030; line-height:1.7; padding:0.85rem 0; border-bottom:1px solid rgba(90,64,48,0.1);">
+          <span style="color:var(--gold); flex-shrink:0; padding-top:0.2rem;">→</span>
+          <span><strong style="color:var(--brown);">Accommodation</strong> — 9 rooms at Villa Sambuca (up to 19 guests overnight), partner villas nearby for larger parties</span>
+        </li>
+        <li style="display:flex; gap:1rem; font-size:0.97rem; color:#5a4030; line-height:1.7; padding:0.85rem 0; border-bottom:1px solid rgba(90,64,48,0.1);">
+          <span style="color:var(--gold); flex-shrink:0; padding-top:0.2rem;">→</span>
+          <span><strong style="color:var(--brown);">Getting here</strong> — Pisa airport (25 min) · Florence airport (1h30) · Rome airport (3h)</span>
+        </li>
+        <li style="display:flex; gap:1rem; font-size:0.97rem; color:#5a4030; line-height:1.7; padding:0.85rem 0; border-bottom:1px solid rgba(90,64,48,0.1);">
+          <span style="color:var(--gold); flex-shrink:0; padding-top:0.2rem;">→</span>
+          <span><strong style="color:var(--brown);">Ceremony</strong> — symbolic ceremonies on site; legal ceremonies can be coordinated in nearby Livorno</span>
+        </li>
+        <li style="display:flex; gap:1rem; font-size:0.97rem; color:#5a4030; line-height:1.7; padding:0.85rem 0; border-bottom:1px solid rgba(90,64,48,0.1);">
+          <span style="color:var(--gold); flex-shrink:0; padding-top:0.2rem;">→</span>
+          <span><strong style="color:var(--brown);">Languages</strong> — our team works in English, Italian, and basic French</span>
+        </li>
+        <li style="display:flex; gap:1rem; font-size:0.97rem; color:#5a4030; line-height:1.7; padding:0.85rem 0;">
+          <span style="color:var(--gold); flex-shrink:0; padding-top:0.2rem;">→</span>
+          <span><strong style="color:var(--brown);">Best season</strong> — May through October</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- From first call to last dance -->
+    <div style="text-align:center; max-width:720px; margin:0 auto;">
+      <h3 style="font-family:var(--font-serif); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:normal; color:var(--brown); margin-bottom:1.2rem;">From first call to last dance</h3>
+      <p style="color:#5a4030; line-height:1.9; font-size:0.97rem; margin-bottom:2.5rem;">We reply within 24 hours with a tailored proposal. We invite you for a site visit before you decide. We're physically present throughout your day — not staff you've never met, but the people who built this place.</p>
+      <a href="#contact" class="btn" style="border-color:var(--gold); color:var(--gold);">Begin the conversation</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- VILLA HUYGENS 1705 -->
+<section style="background:var(--brown); padding:7rem 2rem;" id="villa-huygens">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <img src="/foto_web/villa_huygens.jpg" alt="Villa Huygens 1705, Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; height:620px; display:block; object-position:center 60%;">
+      </div>
+      <div style="color:var(--cream);">
+        <p style="font-size:0.72rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem;">Early access for 2027 weddings</p>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.6rem,3.5vw,2.6rem); font-weight:normal; line-height:1.2; margin-bottom:1.4rem;">A place that has<br>existed since 1705.</h2>
+        <p style="font-size:1.05rem; color:var(--gold); letter-spacing:0.12em; margin-bottom:1.4rem; font-family:'Georgia',serif; font-style:italic;">Villa Huygens, 1705</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1.6rem; font-size:0.97rem;">Villa Huygens is currently being restored — a historic estate in the heart of Valle Benedetta, complete with a private chapel. A place that has crossed centuries and returns to life to host weddings and intimate events of timeless beauty.</p>
+        <div style="margin:0 0 2rem; display:flex; flex-direction:column; gap:0.75rem;">
+          <div style="display:flex; gap:1rem; align-items:baseline;">
+            <span style="color:var(--gold); font-family:var(--font-serif); font-size:1rem; flex-shrink:0; min-width:3rem;">1705</span>
+            <span style="opacity:0.75; font-size:0.9rem;">Original construction</span>
+          </div>
+          <div style="display:flex; gap:1rem; align-items:baseline;">
+            <span style="color:var(--gold); font-family:var(--font-serif); font-size:1rem; flex-shrink:0; min-width:3rem;">→</span>
+            <span style="opacity:0.75; font-size:0.9rem;">Private chapel — for intimate religious or symbolic ceremonies</span>
+          </div>
+          <div style="display:flex; gap:1rem; align-items:baseline;">
+            <span style="color:var(--gold); font-family:var(--font-serif); font-size:1rem; flex-shrink:0; min-width:3rem;">2027</span>
+            <span style="opacity:0.75; font-size:0.9rem;">Restoration in progress — opening 2027</span>
+          </div>
+          <div style="display:flex; gap:1rem; align-items:baseline;">
+            <span style="color:var(--gold); font-family:var(--font-serif); font-size:1rem; flex-shrink:0; min-width:3rem;">&lt;12</span>
+            <span style="opacity:0.75; font-size:0.9rem;">Limited availability — fewer than 12 weddings per year planned</span>
+          </div>
+        </div>
+        <div style="margin-bottom:1.8rem; padding-left:1.2rem; border-left:1px solid rgba(201,162,74,0.4);">
+          <p style="opacity:0.75; font-size:0.9rem; margin-bottom:0.4rem;">→ Available from next year.</p>
+          <p style="opacity:0.75; font-size:0.9rem;">→ Reservable now in early-access preview.</p>
+        </div>
+        <a href="#contact" style="display:inline-block; padding:0.9rem 2.2rem; border:1px solid var(--gold); color:var(--gold); text-decoration:none; font-size:0.78rem; letter-spacing:0.2em; text-transform:uppercase; transition:background 0.25s, color 0.25s;">Request early access</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRIVATE EVENTS / CELEBRATIONS -->
+<section style="background:var(--cream); padding:6rem 2rem;" id="celebrations">
+  <div class="container">
+    <div style="text-align:center; max-width:760px; margin:0 auto 5rem;">
+      <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--terra); margin-bottom:0.8rem;">Private Events</p>
+      <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; color:var(--brown); line-height:1.2; margin-bottom:1.4rem;">Where people relax<br>and the celebration unfolds.</h2>
+      <p style="color:#5a4030; line-height:1.9; font-size:0.97rem;">Birthdays, anniversaries, family reunions, graduations, silver weddings. Each celebration is different, none is a package. We build every event with you, starting from what you want to tell.</p>
+    </div>
+
+    <div class="two-col" style="margin-bottom:5rem;">
+      <div style="color:#5a4030;">
+        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:normal; color:var(--gold); margin-bottom:1rem;">Birthdays you'll remember for years.</h3>
+        <p style="line-height:1.9; margin-bottom:1.2rem; font-size:0.97rem;">18th, 30th, 50th, silver weddings, graduations, family parties. We treat every one with the same care — because they are all, in their way, important moments.</p>
+        <p style="line-height:1.9; margin-bottom:0; font-size:0.97rem;">You can have an intimate dinner for 20 around a single table, or a party with 80 guests stretching from the RistorOrto into the outdoor deck late into the night. Aperitivo on the terrace, dinner curated by chef Simone, DJ sets or acoustic bands, fires in the hearth in winter, starlit dinners in summer.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <img src="/foto_web/festa-adulti-atmosfera-sera.jpg" alt="Evening atmosphere at a private celebration, Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; object-position:center 20%; height:300px; display:block;">
+        <img src="/foto_web/festa-adulti-convivio-balle-fieno.jpg" alt="Outdoor gathering on hay bales, Tuscany celebration at Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; height:260px; display:block;">
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom:3rem;">
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <img src="/foto_web/festa-adulti-hottub.jpg" alt="Group of friends celebrating at Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; height:280px; display:block;">
+        <img src="/foto_web/festa-adulti-dj-notturno.jpg" alt="Evening DJ set at a birthday party, Villa Sambuca Livorno" loading="lazy"
+          style="width:100%; object-fit:cover; height:260px; display:block;">
+      </div>
+      <div style="color:#5a4030;">
+        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:normal; color:var(--gold); margin-bottom:1rem;">The setting does half the work.</h3>
+        <p style="line-height:1.9; margin-bottom:1.2rem; font-size:0.97rem;">When guests arrive here, they notice immediately — this isn't the usual venue. Time slows down. Conversations open up. The party takes shape on its own.</p>
+        <p style="line-height:1.9; margin-bottom:2rem; font-size:0.97rem;">We take care of everything: table setting, catering, music, floor staff. You enjoy the evening.</p>
+        <a href="#contact" class="btn" style="border-color:var(--gold); color:var(--gold);">Plan your celebration</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CHILDREN'S BIRTHDAYS -->
+<section style="background:var(--white); padding:6rem 2rem;" id="children-birthdays">
+  <div class="container">
+    <div style="margin-bottom:4rem; padding-top:2rem; border-top:1px solid rgba(90,64,48,0.15); text-align:center;">
+      <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0;">Children's birthdays</p>
+    </div>
+
+    <div class="two-col" style="margin-bottom:5rem;">
+      <div style="color:#5a4030; display:flex; flex-direction:column; justify-content:center;">
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.6rem,2.8vw,2.2rem); font-weight:normal; color:var(--gold); margin-bottom:1.4rem; line-height:1.2;">For the little ones: a real workshop,<br>not entertainment.</h2>
+        <p style="line-height:1.9; margin-bottom:1.2rem; font-size:0.97rem;">We created a unique format: <strong><em>"Il Cibo in Tutti i Sensi"</em> (Food in All Senses)</strong>. A workshop where children discover food through touch, color, and smell. They paint with fruits and vegetables, they feel, they smell, they create. It's not entertainment — it's an educational experience that becomes a party.</p>
+        <p style="line-height:1.9; margin-bottom:0; font-size:0.97rem;">Perfect for birthdays of children aged 4 to 12. Snacks prepared by our kitchen (nothing industrial — everything made with seasonal fruit from our garden), a safe outdoor space for free play, and the workshop as the main activity. Parents sit at the farm bar with an aperitivo, chat, enjoy the valley. Everyone happy.</p>
+      </div>
+      <div>
+        <img src="/foto_web/bambini-laboratorio-pittura-verdura.jpg" alt="Children painting with fruit and vegetables at the Food in All Senses workshop, Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; object-position:center center; height:560px; display:block;">
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom:3rem;">
+      <div>
+        <img src="/foto_web/bambini-laboratorio-cartellone.jpg" alt="Child showing their painting at the workshop" loading="lazy"
+          style="width:100%; object-fit:cover; object-position:center center; height:400px; display:block;">
+      </div>
+      <div>
+        <img src="/foto_web/bambini-laboratorio-cibo-sensi.jpg" alt="Drawings by children from the Il Cibo in Tutti i Sensi workshop" loading="lazy"
+          style="width:100%; object-fit:cover; object-position:center center; height:400px; display:block;">
+      </div>
+    </div>
+
+    <div style="text-align:center; max-width:720px; margin:2rem auto 0;">
+      <p style="font-family:var(--font-serif); font-style:italic; font-size:clamp(1.2rem,2vw,1.6rem); color:#5a4030; line-height:1.4; margin-bottom:2rem;">We build each party to measure: 10 to 25 children, 2–3 hours, snacks, workshop, take-home creative kit.</p>
+      <a href="#contact" class="btn" style="border-color:var(--gold); color:var(--gold);">Let's plan a birthday</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE ESTATE — location overview -->
+<section style="background:var(--white);" id="the-estate">
+  <div class="container">
+    <p class="section-eyebrow" style="text-align:center">Where it all happens</p>
+    <h2 class="section-title" style="text-align:center">An ecosystem<br>of experiences</h2>
+    <div class="divider"></div>
+    <p style="text-align:center; color:#5a4030; max-width:560px; margin:0 auto 1rem; font-size:0.97rem; line-height:1.8; font-family:var(--font-serif); font-style:italic;">Every space has its own soul. Every event finds its place.</p>
+    <div class="loc-grid">
+      <a href="#villa-huygens" style="text-decoration:none;">
+        <div class="loc-card" style="position:relative; overflow:hidden; outline:2px solid var(--gold); outline-offset:-2px;">
+          <img src="/foto_web/villa_huygens.jpg" alt="Villa Huygens 1705, historic estate Valle Benedetta" loading="lazy">
+          <div class="card-label">
+            <p style="font-size:0.6rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; font-family:'Jost',sans-serif;">Early access · 2027</p>
+            <h3>Villa Huygens, 1705</h3>
+            <p>Historic estate · private chapel · waiting list</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Request access →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#villa-sala" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="/foto_web/villa-sambuca-facciata.jpg" alt="Villa Sambuca exterior facade, Valle Benedetta" loading="lazy">
+          <div class="card-label">
+            <p style="font-size:0.6rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; font-family:'Jost',sans-serif;">Villa Sambuca</p>
+            <h3>Villa Sambuca</h3>
+            <p>The only place where the event doesn't end at night.</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Explore →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#villa-ristorante" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="/foto_web/IMG_1466.jpg" alt="RistorOrto Farm-to-Table restaurant, Villa Sambuca" loading="lazy">
+          <div class="card-label">
+            <p style="font-size:0.6rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; font-family:'Jost',sans-serif;">RistorOrto</p>
+            <h3>RistorOrto Farm-to-Table</h3>
+            <p>Villa Sambuca · up to 80 guests</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Explore →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#serra-bar" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="/foto_web/Screenshot_2026-04-02.jpg" alt="Alla Serra Farm Bar, Valle Benedetta" loading="lazy">
+          <div class="card-label">
+            <p style="font-size:0.6rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; font-family:'Jost',sans-serif;">Alla Serra</p>
+            <h3>Alla Serra Farm Bar</h3>
+            <p>The beating heart of Valle Benedetta.</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Explore →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#serra-aeroponica" style="text-decoration:none">
+        <div class="loc-card">
+          <img src="/foto_web/dentroserra.jpg" alt="Inside the aeroponic greenhouse, Valle Benedetta" loading="lazy">
+          <div class="card-label">
+            <p style="font-size:0.6rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; font-family:'Jost',sans-serif;">Exclusive experience</p>
+            <h3>Inside the Greenhouse</h3>
+            <p>A private event among aeroponic towers.</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Explore →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#pedana-detail" style="text-decoration:none;">
+        <div class="loc-card">
+          <img src="/foto_web/Screenshot_2026-04-021.jpg" alt="La Pedana natural stage, Valle Benedetta" loading="lazy">
+          <div class="card-label">
+            <p style="font-size:0.6rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; font-family:'Jost',sans-serif;">La Pedana</p>
+            <h3>La Pedana</h3>
+            <p>In the woods, like a small amphitheater. Sea view.</p>
+            <span style="color:var(--gold);font-size:0.74rem;letter-spacing:0.14em">Explore →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="num">5</span><span class="label">Unique Locations</span></div>
+    <div class="stat-item"><span class="num">150+</span><span class="label">Guests (max)</span></div>
+    <div class="stat-item"><span class="num">100%</span><span class="label">Organic</span></div>
+    <div class="stat-item"><span class="num">10'</span><span class="label">From the city center</span></div>
+  </div>
+</div>
+
+<!-- MEETING ROOM DETAIL -->
+<section class="loc-detail" style="background:var(--white);" id="villa-sala">
+  <div class="container">
+    <div class="loc-layout">
+      <div class="loc-text">
+        <span class="tag">Villa Sambuca</span>
+        <h2>Meeting Room &amp; Conference</h2>
+        <p>Natural light, views of the green, silence. The 80 sqm room configures in theater, U-shape, or workshop layout — with interactive screen and audio system. The setting already does half the work.</p>
+        <a href="#contact" class="btn btn-solid">Check availability</a>
+      </div>
+      <img src="/foto_web/mg9700_copia.jpg" alt="Conference room at Villa Sambuca, Valle Benedetta" loading="lazy"
+        style="width:100%; height:520px; object-fit:cover; display:block; object-position:center center;">
+    </div>
+  </div>
+</section>
+
+<!-- RISTORANTE DETAIL -->
+<section class="loc-detail" style="background:var(--cream);" id="villa-ristorante">
+  <div class="container">
+    <div class="loc-layout reverse">
+      <div class="loc-text">
+        <span class="tag">Villa Sambuca</span>
+        <h2>RistorOrto Farm-to-Table</h2>
+        <p>Up to 30 guests indoors, 80 with outdoor buffet. In the kitchen: Chef Simone Cipriani. Every dish is an expression of his mastery and ingredients just picked from the garden. Not a kitchen that accompanies — a kitchen that takes the lead.</p>
+        <a href="#contact" class="btn btn-solid">Check availability</a>
+      </div>
+      <div class="photo-gallery g2">
+        <img src="/foto_web/IMG_1466.jpg" alt="RistorOrto dining room" loading="lazy">
+        <img src="/foto_web/IMG_0629.jpg" alt="Candlelit dinner at RistorOrto" loading="lazy">
+        <img src="/foto_web/AJ2A3020.jpg" alt="Chef in the garden, Valle Benedetta" loading="lazy" style="object-position: center top;">
+        <img src="/foto_web/IMG_1457.jpg" alt="Convivial moment at RistorOrto" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHEF SIMONE CIPRIANI -->
+<section style="background:var(--cream); padding:6rem 2rem;">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <img src="/foto_web/IMG_2127.jpg" alt="Chef Simone Cipriani, Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; height:560px; display:block; object-position:center top;">
+      </div>
+      <div>
+        <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--terra); margin-bottom:0.8rem;">The kitchen</p>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:400; color:var(--brown); line-height:1.2; margin-bottom:1.4rem;">Chef Simone Cipriani.<br>From Michelin stars to the earth.</h2>
+        <p style="color:#5a4030; line-height:1.9; margin-bottom:1.4rem; font-size:0.97rem;">Two Michelin stars, St. Regis, Gordon Ramsay, Gambero Rosso Channel. And then the choice: to leave it all behind and coordinate the projects closest to his heart — a future where food does good to people and to the planet.</p>
+        <p style="color:#5a4030; line-height:1.9; margin-bottom:2rem; font-size:0.97rem;">Valle Benedetta embraces his vision: plant-based, seasonal cooking, no shortcuts. Every dish comes from the garden, every food choice supports those who produce with respect. It's not just cooking. It's an act of care.</p>
+        <div style="padding-left:1.2rem; border-left:2px solid var(--gold); margin-bottom:2rem;">
+          <p style="font-family:var(--font-serif); font-size:1.15rem; font-style:italic; color:var(--brown); line-height:1.6; font-weight:400;">"When we begin to care for ourselves, our food choices change — doing good to people and to the planet."</p>
+          <p style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-top:0.6rem;">— Simone Cipriani</p>
+        </div>
+        <a href="#contact" class="btn btn-solid">Create your menu with Simone</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP 2 -->
+<div class="gallery-carousel">
+  <div class="gallery-track" id="gallery2">
+    <img src="/foto_web/IMG_05572.jpg"  alt="Outdoor event at Valle Benedetta" loading="lazy">
+    <img src="/foto_web/IMG_5343.jpg"   alt="Evening celebration in the gardens" loading="lazy">
+    <img src="/foto_web/IMG_6582.jpg"   alt="Sunset at La Pedana" loading="lazy">
+    <img src="/foto_web/IMG_3828.jpg"   alt="Food as an agricultural act" loading="lazy">
+    <img src="/foto_web/IMG_06272.jpg"  alt="Private event at Villa Sambuca" loading="lazy">
+    <img src="/foto_web/IMG_6739.jpg"   alt="Valle Benedetta estate" loading="lazy">
+    <img src="/foto_web/IMG_4630.jpg"   alt="Gathering in the gardens" loading="lazy">
+    <img src="/foto_web/IMG_0926.jpg"   alt="Dining experience at Valle Benedetta" loading="lazy">
+    <img src="/foto_web/IMG_5598.jpg"   alt="Valle Benedetta moments" loading="lazy">
+    <img src="/foto_web/IMG_1342.jpg"   alt="Estate at dusk" loading="lazy">
+  </div>
+  <div class="gallery-dots" id="dots2"></div>
+  <div class="gallery-scroll-hint">scroll <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+</div>
+
+<!-- ALLA SERRA FARM BAR -->
+<section class="loc-detail" style="background:var(--white);" id="serra-bar">
+  <div class="container">
+    <div class="loc-layout">
+      <div class="loc-text">
+        <span class="tag">Organic Estate</span>
+        <h2>Alla Serra<br>Farm Bar</h2>
+        <p>Surrounded by gardens and meadows. Up to 150 guests amid the green of our organic estate, with a natural-farm aesthetic you won't find elsewhere. For those who want an event remembered for how it felt — and for its authentic setting.</p>
+        <a href="#contact" class="btn btn-solid">Check availability</a>
+      </div>
+      <div>
+        <img src="/foto_web/Screenshot_2026-04-02.jpg" alt="Alla Serra Farm Bar, Valle Benedetta" loading="lazy"
+          style="object-position:center center;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE THE GREENHOUSE -->
+<section class="loc-detail" style="background:var(--cream);" id="serra-aeroponica">
+  <div class="container">
+    <div class="loc-layout reverse">
+      <div class="loc-text">
+        <span class="tag">Exclusive experience</span>
+        <h2>Inside the Greenhouse</h2>
+        <p>A private dinner immersed among the aeroponic towers in full production. Scents of fresh herbs, warm lights, a table set with what grows inches away from you. For those seeking something that cannot be replicated.</p>
+        <a href="#contact" class="btn btn-solid">Request information</a>
+      </div>
+      <div>
+        <img src="/foto_web/dentroserra.jpg" alt="Inside the aeroponic greenhouse, Valle Benedetta" loading="lazy"
+          style="object-position:65% center;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LA PEDANA -->
+<section class="loc-detail" style="background:var(--white);" id="pedana-detail">
+  <div class="container">
+    <div class="loc-layout">
+      <div class="loc-text">
+        <span class="tag">Organic Estate</span>
+        <h2>La Pedana</h2>
+        <p>A natural stage facing the hills and the coast. For live music, dance, workshops, intimate concerts. The atmosphere does the rest — the green, the light, the silence broken only by music.</p>
+        <a href="#contact" class="btn btn-solid">Check availability</a>
+      </div>
+      <div>
+        <img src="/foto_web/Screenshot_2026-04-021.jpg" alt="La Pedana natural stage, Valle Benedetta" loading="lazy"
+          style="object-position:center top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELLBEING EXPERIENCES -->
+<section style="background:var(--sage-dark); padding:6rem 2rem;" id="wellbeing">
+  <div class="container">
+    <div class="two-col">
+      <div style="color:var(--cream);">
+        <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Wellbeing &amp; Experiences</p>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; line-height:1.2; margin-bottom:1.4rem;">The body knows when<br>it's in the right place.</h2>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1.4rem; font-size:0.97rem;">The nature around you, the food that comes from the earth, the rhythm that slows down without you deciding it. Yoga, rituals, immersive experiences — or simply the silence of a valley that breathes.</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:2rem; font-size:0.97rem; font-family:var(--font-serif); font-style:italic;">You leave different from how you arrived. It always happens.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem;">
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Yoga &amp; Mindfulness Retreats</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Experiential workshops</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Live concerts</span>
+          <span style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--cream); font-size:0.78rem; padding:0.3rem 0.9rem; border-radius:20px;">Nature-based team building</span>
+        </div>
+        <a href="#contact" class="btn" style="border-color:var(--gold); color:var(--gold);">Explore the possibilities</a>
+      </div>
+      <div>
+        <img src="/foto_web/IMG_6773.jpg" alt="Outdoor wellbeing experiences, Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; height:480px; display:block; object-position:center top;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CORPORATE RETREATS -->
+<section style="background:var(--sage-dark); padding:6rem 2rem;" id="corporate">
+  <div class="container">
+
+    <div class="two-col" style="margin-bottom:5rem;">
+      <div style="color:var(--cream);">
+        <p style="font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Corporate retreats</p>
+        <p style="font-size:0.95rem; color:rgba(245,240,232,0.65); margin-bottom:0.8rem; font-style:italic;">Corporate Wellbeing</p>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:normal; line-height:1.2; margin-bottom:1.4rem;">Out of the office,<br>something strange happens.</h2>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1.2rem; font-size:0.97rem;">People stop performing their role and start being themselves. Ideas come easier. Conversations go deeper. Problems that seemed enormous become solvable.</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:2.4rem; font-size:0.97rem;">It's not magic. It's what happens when you take people out of context and put them in a place that breathes.</p>
+
+        <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:normal; color:var(--gold); margin-bottom:1rem;">Two floors, multiple settings, one orchestration.</h3>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1rem; font-size:0.97rem;"><strong>Upstairs room</strong> — 80 sqm with floor-to-ceiling glass opening onto a 50 sqm panoramic terrace. Up to 60 seated. Full natural light, view of the Livorno hills. Configurable for plenary, U-shape, or workshop.</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1rem; font-size:0.97rem;"><strong>Ground floor room</strong> — The RistorOrto in day mode: workstations, brainstorming, convivial lunch under white arches and windows on the green. 35–40 seated indoors, up to 80 in fair weather when it opens onto the outdoor deck.</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:0; font-size:0.97rem;"><strong>Two rooms, two floors.</strong> Keynote upstairs, workshops downstairs. Lunch in between. Aperitivo on the terrace. Everything flows in one place, no transfers, no time lost.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <img src="/foto_web/villa-sambuca-esterno-01.jpg" alt="Villa Sambuca exterior, Valle Benedetta Livorno" loading="lazy"
+          style="width:100%; object-fit:cover; height:300px; display:block; object-position:center center;">
+        <img src="/foto_web/sala-piano-terra-workspace-04.jpg" alt="Workstations set up in the ground floor room, Villa Sambuca" loading="lazy"
+          style="width:100%; object-fit:cover; height:240px; display:block; object-position:center center;">
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <img src="/foto_web/sala-piano-terra-workspace-01.jpg" alt="Team at work in the ground floor room, Valle Benedetta" loading="lazy"
+          style="width:100%; object-fit:cover; height:280px; display:block; object-position:center center;">
+        <img src="/foto_web/sala-primo-piano-seminari-01.jpg" alt="Seminar room on the first floor, Villa Sambuca, with interactive screen" loading="lazy"
+          style="width:100%; object-fit:cover; height:260px; display:block; object-position:center center;">
+      </div>
+      <div style="color:var(--cream);">
+        <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:normal; color:var(--gold); margin-bottom:1rem;">Professional equipment, zero surprises.</h3>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1rem; font-size:0.97rem;">Latest-generation interactive touchscreen. Integrated audio system. Video projector. Satellite-grade wifi — tested for international calls, HD streaming, cloud presentations. Arrive, plug in your laptop, it works.</p>
+
+        <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:normal; color:var(--gold); margin-bottom:1rem; margin-top:1.8rem;">Nine rooms in the villa, for those who want to stay.</h3>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1rem; font-size:0.97rem;">Villa Sambuca has 9 rooms: one quadruple, six doubles with private bath, and two options (one single, one double) with shared bath. Overnight capacity: up to 19 guests in their own rooms.</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:2rem; font-size:0.97rem;">Ideal for 1–2 night offsites, teams of 15–20. For larger groups, we arrange accommodations at partner properties minutes away.</p>
+
+        <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:normal; color:var(--gold); margin-bottom:1rem;">With you, from start to finish.</h3>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:1rem; font-size:0.97rem;">Valle Benedetta opened recently, and we say it openly. We've hosted retreats, dinners, private events — and now we open the venue to corporate groups. Your event won't be one of a hundred: it will be at the center of our attention, with the care of those who have just built a place they deeply care for.</p>
+        <p style="opacity:0.85; line-height:1.9; margin-bottom:2.4rem; font-size:0.97rem;">We reply within 24 hours with a tailored proposal. We organize a site visit if you want to see first. We're physically present during the event.</p>
+
+        <a href="#contact" class="btn" style="border-color:var(--gold); color:var(--gold);">Bring your team here</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TESTIMONIAL -->
+<section style="background:var(--cream); padding:6rem 2rem;">
+  <div class="container">
+    <div class="testimonial-layout" style="display:grid; grid-template-columns:1fr 2fr; gap:5rem; align-items:center; max-width:900px; margin:0 auto;">
+      <div class="testimonial-photo" style="max-width:220px; margin:0 auto;">
+        <img src="/foto_web/testimonial.jpg" alt="Lorenzo and Caterina" loading="lazy"
+          style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%; display:block; filter:grayscale(15%);">
+      </div>
+      <div>
+        <p style="font-family:'DM Serif Display',serif; font-size:clamp(1.3rem,2.5vw,1.9rem); font-weight:400; color:var(--brown); line-height:1.6; font-style:italic; margin-bottom:1.8rem;">"There's a moment at Valle Benedetta when you stop thinking about the schedule. You just stay. And you see everyone happy."</p>
+        <p style="font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); font-family:'Jost',sans-serif; font-weight:300;">— Lorenzo and Caterina</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLOSING QUOTE -->
+<section class="quote-section">
+  <blockquote>
+    "You don't become happy here.<br>You remember you already are."
+  </blockquote>
+  <cite>— AUTENTICA, Valle Benedetta</cite>
+</section>
+
+
+<!-- ECOSYSTEM BAR -->
+<section style="background:var(--cream); padding:4rem 2rem; border-top:1px solid rgba(90,64,48,0.1);">
+  <div class="container" style="max-width:900px; margin:0 auto; text-align:center;">
+    <p style="font-size:0.72rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem;">Part of the Valle Benedetta project</p>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; align-items:flex-start;">
+
+      <div style="text-align:center;">
+        <span style="display:block; font-size:0.78rem; letter-spacing:0.28em; text-transform:uppercase; color:#5a4030; font-weight:500; padding-bottom:0.3rem;">Autentica</span>
+        <span style="display:block; font-family:var(--font-serif); font-style:italic; font-size:0.85rem; color:#8a7560; margin-top:0.4rem;">Bespoke Events</span>
+      </div>
+
+      <span style="color:var(--gold); font-size:1rem; margin-top:0.3rem;">·</span>
+
+      <div style="text-align:center;">
+        <a href="https://vallebenedetta.org" target="_blank" rel="noopener" style="display:block; font-size:0.78rem; letter-spacing:0.28em; text-transform:uppercase; color:#5a4030; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:0.3rem; transition:border-color 0.3s; font-weight:500;" onmouseover="this.style.borderBottomColor='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent'">Valle Benedetta</a>
+        <span style="display:block; font-family:var(--font-serif); font-style:italic; font-size:0.85rem; color:#8a7560; margin-top:0.4rem;">Retreat Center</span>
+      </div>
+
+      <span style="color:var(--gold); font-size:1rem; margin-top:0.3rem;">·</span>
+
+      <div style="text-align:center;">
+        <a href="https://allaserra.it" target="_blank" rel="noopener" style="display:block; font-size:0.78rem; letter-spacing:0.28em; text-transform:uppercase; color:#5a4030; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:0.3rem; transition:border-color 0.3s; font-weight:500;" onmouseover="this.style.borderBottomColor='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent'">Alla Serra</a>
+        <span style="display:block; font-family:var(--font-serif); font-style:italic; font-size:0.85rem; color:#8a7560; margin-top:0.4rem;">Farm Bar</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT FORM -->
+<section style="background:var(--cream); text-align:center;" id="contact">
+  <div class="container">
+    <p class="section-eyebrow">We're here, every day</p>
+    <h2 class="section-title">Tell us about your event</h2>
+    <div class="divider"></div>
+    <p class="section-lead" style="text-align:center; font-family:'Georgia',serif; font-style:italic; font-size:1.15rem; color:var(--brown);">Every event starts with a conversation.</p>
+    <p class="section-lead" style="text-align:center; margin-top:0.8rem;">We're not a booking portal — we're real people who reply within 24 hours with a tailored proposal.</p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <select name="tipo_evento" required>
+        <option value="" disabled selected>Choose an event type…</option>
+        <option>Dinner / Aperitivo</option>
+        <option>Adult birthday</option>
+        <option>Children's birthday</option>
+        <option>Anniversary or milestone</option>
+        <option>Wedding</option>
+        <option>Corporate event / Meeting</option>
+        <option>Retreat or workshop (I'm bringing my group)</option>
+        <option>Other / Multiple things together</option>
+      </select>
+      <div class="row">
+        <input type="text" name="nome" placeholder="Full name" required>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+      <input type="tel" name="telefono" placeholder="Phone (optional)">
+      <select name="location">
+        <option value="" disabled selected>Choose a location…</option>
+        <option>Meeting Room — Villa Sambuca</option>
+        <option>RistorOrto Farm-to-Table — Villa Sambuca</option>
+        <option>Alla Serra Farm Bar</option>
+        <option>Inside the Greenhouse (aeroponic)</option>
+        <option>La Pedana</option>
+        <option>Multiple locations / To be defined</option>
+      </select>
+      <div class="row">
+        <input type="date" name="data_evento" placeholder="Event date" required>
+        <input type="number" name="num_ospiti" placeholder="Approximate guest count" min="1" required>
+      </div>
+      <div class="row">
+        <label><input type="radio" name="data_flessibilita" value="fissa" required> Fixed date</label>
+        <label><input type="radio" name="data_flessibilita" value="flessibile" checked> Flexible date</label>
+      </div>
+      <textarea name="messaggio" placeholder="Tell us about your event: type of occasion, special requirements, catering wishes…" required></textarea>
+      <button type="submit" class="btn btn-solid" style="padding:1rem; font-size:0.88rem; cursor:pointer; border:none; letter-spacing:0.16em">TELL US ABOUT YOUR EVENT</button>
+    </form>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo" style="font-family:'Jost',sans-serif; font-size:1rem; letter-spacing:0.48em; font-weight:300;">AUTENTICA</span>
+  <p>Valle Benedetta · Organic Farm Estate · Livorno, Tuscany</p>
+  <p style="margin-top:0.4rem"><a href="mailto:autentica@vallebenedetta.org">autentica@vallebenedetta.org</a></p>
+  <p style="margin-top:1.2rem; opacity:0.45; font-size:0.75rem">© 2026 AUTENTICA · Valle Benedetta · All rights reserved</p>
+</footer>
+
+<script>
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type=submit]');
+    btn.textContent = 'SENDING…';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xreryoka', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if (res.ok) {
+        btn.textContent = '✓ REQUEST SENT';
+        btn.style.background = 'var(--sage-dark)';
+        btn.style.borderColor = 'var(--sage-dark)';
+        btn.style.color = '#fff';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = 'TELL US ABOUT YOUR EVENT';
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error('server error');
+      }
+    } catch {
+      btn.textContent = 'ERROR — TRY AGAIN';
+      btn.style.background = '#a03030';
+      btn.style.borderColor = '#a03030';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.textContent = 'TELL US ABOUT YOUR EVENT';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 4000);
+    }
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
+  });
+
+  // Gallery carousel with dots and drag scroll
+  document.querySelectorAll('.gallery-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.gallery-track');
+    const dotsContainer = carousel.querySelector('.gallery-dots');
+    const images = track.querySelectorAll('img');
+    const groupSize = 4;
+    const totalDots = Math.ceil(images.length / groupSize);
+
+    for(let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to group ' + (i+1));
+      dot.addEventListener('click', () => {
+        const target = images[i * groupSize];
+        if(target) track.scrollTo({ left: target.offsetLeft - 32, behavior: 'smooth' });
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    track.addEventListener('scroll', () => {
+      const scrollPos = track.scrollLeft;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const progress = scrollPos / maxScroll;
+      const activeDot = Math.min(Math.round(progress * (totalDots - 1)), totalDots - 1);
+      dotsContainer.querySelectorAll('.gallery-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === activeDot);
+      });
+    });
+
+    let isDown = false, startX, scrollLeft;
+    track.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+    track.addEventListener('mouseleave', () => isDown = false);
+    track.addEventListener('mouseup', () => isDown = false);
+    track.addEventListener('mousemove', e => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+  });
+</script>
+
+</body>
+</html>
